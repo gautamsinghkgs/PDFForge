@@ -1,0 +1,65 @@
+# ── Dependencies ──
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# ── Build output ──
+client/build/
+
+# ── Python cache ──
+pdf-service/__pycache__/
+__pycache__/
+*.pyc
+
+# ── Environment ──
+server/.env
+.env
+*.env.local
+
+# ── Uploads & Temp ──
+server/uploads/
+server/temp-*/
+temp-*/
+uploads/
+
+# ── Tesseract language data (downloaded at runtime) ──
+*.traineddata
+
+# ── PDF Service artifacts (generated during conversion) ──
+pdf-service/*.docx
+pdf-service/*.xlsx
+pdf-service/*.pptx
+pdf-service/*.csv
+
+# ── Root output/test artifacts ──
+*.docx
+*.xlsx
+*.pptx
+*.pdf
+*.csv
+test-*
+
+# ── Logs ──
+*.log
+npm-debug.log*
+server/logs/
+
+# ── OS files ──
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ──
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── AI chat history ──
+.aider*
+
+# ── Planning / Docs (not code) ──
+plans/
+
+# ── Vercel build output root (client/build is already ignored) ──
+.vercel/

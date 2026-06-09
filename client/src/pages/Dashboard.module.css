@@ -1,0 +1,46 @@
+.header { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 40px 0; margin-bottom: 32px; }
+.headerInner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.header h1 { font-family: var(--font-display); font-size: 1.8rem; font-weight: 800; letter-spacing: -0.5px; margin-bottom: 4px; }
+.header p { color: var(--text-muted); font-size: 0.9rem; }
+
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.statCard { display: flex; align-items: center; gap: 14px; }
+.statIcon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.statLabel { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 4px; }
+.statVal { font-family: var(--font-display); font-size: 1.4rem; font-weight: 800; }
+
+.progressTrack { width: 100%; height: 8px; background: var(--surface2); border-radius: 100px; overflow: hidden; }
+.progressFill { height: 100%; border-radius: 100px; }
+
+.bottomGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+.historyList { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.historyItem { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 10px; transition: background 0.2s; }
+.historyItem:hover { background: var(--surface2); }
+.historyIcon { flex-shrink: 0; }
+.historyInfo { flex: 1; min-width: 0; }
+.historyTool { display: block; font-size: 0.88rem; font-weight: 500; text-transform: capitalize; }
+.historyTime { font-size: 0.76rem; color: var(--text-muted); }
+.historyStatus { font-size: 0.74rem; font-weight: 600; text-transform: capitalize; padding: 3px 8px; border-radius: 6px; flex-shrink: 0; }
+.historyStatus.completed  { background: rgba(16,185,129,0.15); color: #10b981; }
+.historyStatus.failed     { background: rgba(239,68,68,0.15); color: #ef4444; }
+.historyStatus.processing { background: rgba(245,158,11,0.15); color: #f59e0b; }
+
+.topToolsList { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.topToolItem { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); }
+.topToolItem:last-child { border-bottom: none; }
+.topToolRank { font-family: var(--font-display); font-size: 1.1rem; font-weight: 800; color: var(--text-muted); width: 28px; flex-shrink: 0; }
+.topToolName { flex: 1; font-size: 0.88rem; text-transform: capitalize; color: var(--text); transition: color 0.2s; }
+.topToolName:hover { color: var(--accent); }
+.topToolCount { font-size: 0.78rem; color: var(--text-muted); }
+
+@media (max-width: 900px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .statsGrid { grid-template-columns: 1fr 1fr; }
+  .bottomGrid { grid-template-columns: 1fr; }
+}
+@media (max-width: 400px) {
+  .statsGrid { grid-template-columns: 1fr; }
+}

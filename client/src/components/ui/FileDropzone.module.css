@@ -1,0 +1,59 @@
+.zone {
+  border: 2px dashed var(--border-hover);
+  border-radius: 12px; background: var(--bg2);
+  cursor: pointer; transition: all 0.18s;
+  min-height: 160px; display: flex; align-items: center; justify-content: center;
+}
+.zone:hover { border-color: var(--accent); background: rgba(255,33,22,0.03); }
+.drag { border-color: var(--accent) !important; background: rgba(255,33,22,0.05) !important; }
+.filled { border-style: solid; border-color: var(--border); cursor: default; min-height: auto; }
+
+.placeholder {
+  text-align: center; padding: 32px 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+}
+.uploadCircle {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(255,33,22,0.08); color: var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 6px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}
+.mainLabel { font-size: 0.95rem; font-weight: 700; color: var(--text); }
+.subLabel { font-size: 0.84rem; color: var(--text-muted); }
+.hint { font-size: 0.75rem; color: var(--text-light); margin-top: 4px; }
+
+.fileList { width: 100%; padding: 10px; }
+.fileRow {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 8px; border-radius: 8px; transition: background 0.12s;
+}
+.fileRow:hover { background: var(--bg2); }
+.fileThumb {
+  width: 34px; height: 34px; border-radius: 7px;
+  background: rgba(255,33,22,0.1); color: var(--accent);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.fileMeta { flex: 1; min-width: 0; }
+.fileName { display: block; font-size: 0.87rem; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fileSize { font-size: 0.74rem; color: var(--text-muted); }
+.removeBtn {
+  width: 26px; height: 26px; border-radius: 50%; border: none;
+  background: var(--bg3); color: var(--text-muted);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: all 0.12s; flex-shrink: 0;
+}
+.removeBtn:hover { background: #ffeaea; color: var(--accent); }
+.addMoreBtn {
+  width: 100%; margin-top: 6px; padding: 8px;
+  border: 1.5px dashed var(--border-hover); border-radius: 7px;
+  background: none; color: var(--text-muted); cursor: pointer;
+  font-size: 0.82rem; font-family: var(--font-body); transition: all 0.15s;
+}
+.addMoreBtn:hover { border-color: var(--accent); color: var(--accent); }

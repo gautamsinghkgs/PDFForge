@@ -1,0 +1,16 @@
+{
+  "name": "pdfforge-mern",
+  "version": "1.0.0",
+  "description": "Full-stack PDF tools platform built with MERN stack",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "seed": "cd server && node utils/seed.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

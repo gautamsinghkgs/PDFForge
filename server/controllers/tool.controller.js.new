@@ -1,0 +1,151 @@
+      case 'merge-image': {
+        const { format, direction, quality, a4mode, multipage } = options;
+        const A4_WIDTH  = 1240;
+        const A4_HEIGHT = 1754;
+
+        // Load images with metadata
+        const images = [];
+        for (const file of files) {
+          try {
+            const meta = await sharp(file.path).metadata();
+            images.push({
+              path: file.path,
+              name: file.originalname,
+              width: meta.width,
+              height: meta.height,
+              aspectRatio: meta.width / meta.height
+            });
+          } catch (err) {
+            console.warn(`Failed to load image ${file.originalname}:`, err.message);
+          }
+        }
+
+        if (images.length === 0) throw new Error('No valid images could be loaded.');
+
+        if (multipage) {
+          // Multi-Page Mode: Pack images tightly in columns
+          const imagesPerPage = 4;
+          const totalPages = Math.ceil(images.length / imagesPerPage);
+          const padding = 6;
+
+          console.log(`📑 Multi-Page: ${images.length} images across ${totalPages} pages`);
+
+          const pdfDoc = await PDFDocument.create();
+
+          for (let pageNum = 0; pageNum < totalPages; pageNum++) {
+            const startIdx = pageNum * imagesPerPage;
+            const pageImages = images.slice(startIdx, startIdx + imagesPerPage);
+            const imagesOnThisPage = pageImages.length;
+
+            const cols = Math.min(2, imagesOnThisPage);
+            const availableWidth = A4_WIDTH - (padding * (cols + 1));
+            const colWidth = Math.floor(availableWidth / cols);
+
+            // Calculate each image's actual height when scaled to column width
+            const imageCalcs = pageImages.map(img => ({
+              ...img,
+              scaledWidth: colWidth,
+              scaledHeight: Math.round(colWidth / img.aspectRatio)
+            }));
+
+            // Find max height in each row to determine row height
+            const rows = Math.ceil(imagesOnThisPage / cols);
+            const rowHeights = [];
+            for (let r = 0; r < rows; r++) {
+              let maxHeight = 0;
+              for (let c = 0; c < cols; c++) {
+                const idx = r * cols + c;
+                if (idx < imageCalcs.length) {
+                  maxHeight = Math.max(maxHeight, imageCalcs[idx].scaledHeight);
+                }
+              }
+              rowHeights.push(maxHeight);
+            }
+
+            // Scale to fill page if content is shorter than available space
+            const totalContentHeight = rowHeights.reduce((a, b) => a + b, 0);
+            const availableHeight = A4_HEIGHT - (padding * (rows + 1));
+            let scaleFactor = 1;
+            if (totalContentHeight < availableHeight) {
+              scaleFactor = availableHeight / totalContentHeight;
+            }
+
+            // Final scaled dimensions
+            const finalColWidth = Math.floor(colWidth * scaleFactor);
+            const finalRowHeights = rowHeights.map(h => Math.floor(h * scaleFactor));
+
+            // Calculate Y positions for each row
+            const rowYPositions = [];
+            let currentY = padding;
+            for (let r = 0; r < rows; r++) {
+              rowYPositions.push(currentY);
+              currentY += finalRowHeights[r] + padding;
+            }
+
+            console.log(`📄 Page ${pageNum + 1}: ${imagesOnThisPage} images, grid ${cols}x${rows}`);
+            console.log(`📏 Col: ${finalColWidth}, Rows: ${finalRowHeights.join(',')}, Scale: ${scaleFactor.toFixed(3)}`);
+
+            // Create canvas
+            const canvas = sharp({
+              create: {
+                width: A4_WIDTH,
+                height: A4_HEIGHT,
+                channels: 3,
+                background: { r: 255, g: 255, b: 255 }
+              }
+            });
+
+            const composites = [];
+
+            // Place images
+            for (let i = 0; i < pageImages.length; i++) {
+              const img = pageImages[i];
+              const col = i % cols;
+              const row = Math.floor(i / cols);
+
+              const xOffset = padding + (col * (finalColWidth + padding));
+              const yOffset = rowYPositions[row];
+
+              // Resize image
+              const outputQuality = quality === 'low' ? 70 : 95;
+              const resizedBuffer = await sharp(img.path)
+                .resize(finalColWidth, finalRowHeights[row], {
+                  fit: 'inside',
+                  withoutEnlargement: false
+                })
+                .jpeg({ quality: outputQuality })
+                .toBuffer();
+
+              const resizedMeta = await sharp(resizedBuffer).metadata();
+
+              // Center horizontally only
+              const finalX = xOffset + Math.round((finalColWidth - resizedMeta.width) / 2);
+              const finalY = yOffset;
+
+              composites.push({
+                input: resizedBuffer,
+                left: finalX,
+                top: finalY
+              });
+
+              console.log(`✅ Image ${i} (${img.name}): ${resizedMeta.width}x${resizedMeta.height} at (${finalX},${finalY})`);
+            }
+
+            // Generate page
+            console.log(`🖼️ Compositing ${composites.length} images...`);
+            const pageBuffer = await canvas.composite(composites).jpeg({ quality: 95 }).toBuffer();
+
+            const jpgImage = await pdfDoc.embedJpg(pageBuffer);
+            const page = pdfDoc.addPage([A4_WIDTH, A4_HEIGHT]);
+            page.drawImage(jpgImage, { x: 0, y: 0, width: A4_WIDTH, height: A4_HEIGHT });
+
+            console.log(`✅ Page ${pageNum + 1} completed`);
+          }
+
+          // Save PDF
+          const pdfBytes = await pdfDoc.save();
+          fs.writeFileSync(outPath, pdfBytes);
+
+          console.log(`✅ Multi-Page PDF completed: ${outPath} (${totalPages} pages)`);
+          break;
+        }

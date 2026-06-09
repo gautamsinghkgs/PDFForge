@@ -1,0 +1,53 @@
+{
+  "name": "pdfforge-server",
+  "version": "2.0.0",
+  "description": "PDFForge Express + MongoDB Backend — 100% Local PDF Processing (No API needed)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node utils/seed.js",
+    "cluster": "node cluster.js",
+    "pm2-start": "pm2 start ecosystem.config.js --env production",
+    "pm2-stop": "pm2 stop pdfforge-server",
+    "pm2-restart": "pm2 restart pdfforge-server",
+    "pm2-logs": "pm2 logs pdfforge-server",
+    "pm2-monit": "pm2 monit"
+  },
+  "dependencies": {
+    "archiver": "^6.0.1",
+    "axios": "^1.14.0",
+    "bcryptjs": "^2.4.3",
+    "canvas": "^3.2.3",
+    "cors": "^2.8.5",
+    "docx": "^9.6.1",
+    "dotenv": "^16.3.1",
+    "exceljs": "^4.4.0",
+    "express": "^4.18.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^7.1.5",
+    "express-validator": "^7.0.1",
+    "form-data": "^4.0.5",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "jsonwebtoken": "^9.0.2",
+    "mammoth": "^1.6.0",
+    "mongoose": "^8.0.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
+    "pdf2docx": "^0.0.0",
+    "pdf2pic": "^3.1.1",
+    "pptxgenjs": "^4.0.1",
+    "puppeteer": "^24.0.0",
+    "razorpay": "^2.9.6",
+    "sharp": "^0.33.2",
+    "tesseract.js": "^5.0.4",
+    "uuid": "^11.1.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2",
+    "pm2": "^5.4.3"
+  }
+}

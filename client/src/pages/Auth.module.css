@@ -1,0 +1,55 @@
+.page {
+  min-height: calc(100vh - var(--nav-h));
+  display: flex; align-items: center; justify-content: center;
+  padding: 40px 24px;
+  background: radial-gradient(ellipse at top, rgba(108,99,255,0.12) 0%, var(--bg) 60%);
+}
+.card {
+  width: 100%; max-width: 440px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 24px; padding: 48px 40px;
+}
+.logo {
+  display: flex; align-items: center; gap: 8px;
+  font-family: var(--font-display); font-size: 1.3rem; font-weight: 700;
+  justify-content: center; margin-bottom: 28px;
+}
+.logo span { color: var(--accent); font-size: 1.5rem; }
+.logo strong { color: var(--accent); }
+.card h2 {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 800;
+  text-align: center; margin-bottom: 8px; letter-spacing: -0.5px;
+}
+.sub { text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 32px; }
+
+.form { display: flex; flex-direction: column; gap: 16px; }
+.group { display: flex; flex-direction: column; gap: 6px; }
+.group label {
+  font-size: 0.78rem; font-weight: 600;
+  color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.6px;
+}
+.group input {
+  padding: 12px 16px; border-radius: 10px;
+  background: var(--bg3); border: 1px solid var(--border);
+  color: var(--text); font-family: var(--font-body); font-size: 0.95rem;
+  transition: border-color 0.2s; outline: none;
+}
+.group input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(108,99,255,0.15); }
+
+.submitBtn {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 14px; border-radius: 10px; border: none; cursor: pointer;
+  background: var(--accent); color: #fff;
+  font-family: var(--font-display); font-size: 1rem; font-weight: 700;
+  transition: all 0.2s; margin-top: 4px;
+}
+.submitBtn:hover:not(:disabled) { background: var(--accent-hover); box-shadow: 0 8px 24px var(--glow); }
+.submitBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.link { text-align: center; margin-top: 20px; font-size: 0.87rem; color: var(--text-muted); }
+.link a { color: var(--accent); font-weight: 600; }
+.link a:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .card { padding: 32px 20px; }
+}
