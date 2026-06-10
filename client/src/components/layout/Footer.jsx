@@ -8,7 +8,7 @@ export default function Footer() {
         <div className={styles.grid}>
           <div>
             <div className={styles.brand}>
-              <svg width="20" height="20" viewBox="0 0 22 22" fill="none"><rect width="22" height="22" rx="5" fill="#ff2116"/><path d="M6 7h6a3 3 0 0 1 0 6H8v4H6V7z" fill="white"/></svg>
+              <svg width="20" height="20" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="7" fill="#ff2116"/><path d="M9 10h8.5a4 4 0 0 1 0 8H14v5H9V10z" fill="white"/><circle cx="17" cy="14" r="2" fill="#ff2116"/></svg>
               <strong>PDFForge</strong>
             </div>
             <p className={styles.tagline}>Every PDF tool you need, free and easy to use.</p>
