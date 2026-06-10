@@ -18,6 +18,7 @@ const paymentRoutes = require('./routes/payment.routes');
 const { sweepExpiredOutputs, DOWNLOAD_TTL_MS } = require('./utils/downloads');
 const { apiLimiter } = require('./middleware/rateLimit.middleware');
 const { sanitize, xssSanitize } = require('./middleware/sanitize.middleware');
+const { autoSeed } = require('./utils/autoSeed');
 const hpp = require('hpp');
 
 const app = express();
@@ -100,8 +101,8 @@ app.use('/api/history', historyRoutes);
 app.use('/api/downloads', downloadRoutes);
 app.use('/api/payments', paymentRoutes);
 
-// ── Health check ──
-app.get('/api/health', (req, res) => {
+// ── Health check (Render uses /healthz, Vercel/Railway may use others) ──
+app.get(['/healthz', '/api/health', '/health'], (req, res) => {
   res.json({ status: 'OK', time: new Date().toISOString() });
 });
 
@@ -133,6 +134,7 @@ mongoose
     sweep();
     setInterval(sweep, Math.min(DOWNLOAD_TTL_MS, 15 * 60 * 1000)).unref();
     console.log('✅ MongoDB connected');
+    autoSeed();
     app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
   })
   .catch((err) => {
