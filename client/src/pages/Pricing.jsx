@@ -34,6 +34,7 @@ const PLANS = [
       'Up to 100MB per file',
       '100 tasks per day',
       'Files deleted after 1 hour',
+      'UPI · Cards · Net Banking · QR',
       'Access to configured premium tools',
     ],
     cta: 'Subscribe Now',
@@ -169,7 +170,7 @@ export default function Pricing() {
                 {plan.name}
               </div>
               <div className={styles.price}>
-                ${plan.price}<span>/mo</span>
+                ₹{plan.price}<span>/mo</span>
               </div>
               <p className={styles.planDesc}>{plan.desc}</p>
               <ul className={styles.features}>
@@ -211,6 +212,15 @@ export default function Pricing() {
         })}
       </div>
 
+      <div className={styles.paymentMethods}>
+        <h3>Accepted Payment Methods</h3>
+        <div className={styles.methodsGrid}>
+          {['UPI (GPay, PhonePe, Paytm)', 'Credit / Debit Cards', 'Net Banking', 'International Cards', 'QR Code'].map(m => (
+            <span key={m} className={styles.methodBadge}>{m}</span>
+          ))}
+        </div>
+      </div>
+
       <div className={styles.faq}>
         <div className="container">
           <h2>Frequently Asked Questions</h2>
@@ -218,7 +228,7 @@ export default function Pricing() {
             {[
               { q: 'Is the free plan really free?', a: 'Yes. The free plan gives you access to the enabled PDF tools with a daily task limit.' },
               { q: 'How long are output files available?', a: 'Output files use expiring signed download links and are deleted from the configured server after 1 hour.' },
-              { q: 'How do I subscribe?', a: 'Click Subscribe Now on any paid plan. You will be redirected to Razorpay checkout to complete payment.' },
+              { q: 'What payment methods are accepted?', a: 'All major payment methods: UPI (GPay, PhonePe, Paytm), Credit/Debit Cards, Net Banking, International Cards, and QR Code.' },
               { q: 'Does this require system dependencies?', a: 'Some tools require Ghostscript or LibreOffice on the server. The setup guide lists the required dependencies.' },
             ].map(({ q, a }) => (
               <div key={q} className={styles.faqItem}>

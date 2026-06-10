@@ -180,3 +180,43 @@ exports.getPlanInfo = async (req, res) => {
     subscriptionEndDate: req.user.subscriptionEndDate,
   });
 };
+
+// ── Generate UPI QR Code for payment ──
+exports.createQRCode = async (req, res) => {
+  try {
+    const rzp = getRazorpay();
+    if (!rzp) {
+      return res.status(503).json({ success: false, message: 'Payment gateway not configured' });
+    }
+
+    const { plan } = req.body;
+    if (!plan || !PLAN_PRICES[plan]) {
+      return res.status(400).json({ success: false, message: 'Invalid plan selected' });
+    }
+
+    const qrCode = await rzp.qrCode.create({
+      type: 'upi_qr',
+      name: `PDFForge ${plan} Plan`,
+      usage: 'single_use',
+      fixed_amount: true,
+      payment_amount: PLAN_PRICES[plan],
+      description: `${plan.charAt(0).toUpperCase() + plan.slice(1)} Plan - PDFForge`,
+      notes: {
+        userId: req.user._id.toString(),
+        plan,
+      },
+    });
+
+    res.json({
+      success: true,
+      qrCode: {
+        id: qrCode.id,
+        imageUrl: qrCode.image_url,
+        amount: qrCode.payment_amount,
+      },
+    });
+  } catch (err) {
+    console.error('QR code creation failed:', err.message);
+    res.status(500).json({ success: false, message: 'Failed to generate QR code' });
+  }
+};
