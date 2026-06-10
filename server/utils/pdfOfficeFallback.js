@@ -6,6 +6,58 @@
 'use strict';
 
 const fs = require('fs');
+
+// ── Polyfill DOMMatrix for pdf-parse (pdfjs-dist needs it in Node.js) ──
+if (typeof globalThis.DOMMatrix === 'undefined') {
+  try {
+    const { DOMMatrix } = require('canvas');
+    globalThis.DOMMatrix = DOMMatrix;
+  } catch {
+    // Minimal DOMMatrix polyfill for pdfjs text extraction
+    class DOMMatrixPolyfill {
+      constructor(init) {
+        if (typeof init === 'string') {
+          this.a = 1; this.b = 0; this.c = 0; this.d = 1; this.e = 0; this.f = 0;
+        } else if (init) {
+          const m = init.length >= 6 ? init : [1, 0, 0, 1, 0, 0];
+          this.a = m[0]; this.b = m[1]; this.c = m[2]; this.d = m[3]; this.e = m[4]; this.f = m[5];
+        } else {
+          this.a = 1; this.b = 0; this.c = 0; this.d = 1; this.e = 0; this.f = 0;
+        }
+      }
+      translate(tx, ty) {
+        return new DOMMatrixPolyfill([this.a, this.b, this.c, this.d, this.e + tx, this.f + ty]);
+      }
+      scale(sx, sy) {
+        return new DOMMatrixPolyfill([this.a * sx, this.b * sx, this.c * sy, this.d * sy, this.e, this.f]);
+      }
+      multiply(other) {
+        const m1 = this, m2 = other;
+        return new DOMMatrixPolyfill([
+          m1.a * m2.a + m1.c * m2.b,
+          m1.b * m2.a + m1.d * m2.b,
+          m1.a * m2.c + m1.c * m2.d,
+          m1.b * m2.c + m1.d * m2.d,
+          m1.a * m2.e + m1.c * m2.f + m1.e,
+          m1.b * m2.e + m1.d * m2.f + m1.f
+        ]);
+      }
+      inverse() {
+        const d = this.a * this.d - this.b * this.c;
+        if (Math.abs(d) < 1e-12) return new DOMMatrixPolyfill();
+        return new DOMMatrixPolyfill([
+          this.d / d, -this.b / d, -this.c / d, this.a / d,
+          (this.c * this.f - this.d * this.e) / d,
+          (this.b * this.e - this.a * this.f) / d
+        ]);
+      }
+      toString() { return `matrix(${this.a},${this.b},${this.c},${this.d},${this.e},${this.f})`; }
+    }
+    globalThis.DOMMatrix = DOMMatrixPolyfill;
+    console.log('DOMMatrix polyfill applied for pdf-parse');
+  }
+}
+
 const { PDFParse } = require('pdf-parse');
 
 const NO_TEXT =
