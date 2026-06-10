@@ -1,18 +1,14 @@
+const API_BASE = process.env.REACT_APP_API_URL || 'https://pdfforge-server-8mwu.onrender.com/api';
+
 /**
- * Cross-origin <a download> is often ignored; fetch + blob saves the full file reliably.
+ * Resolve download URL against the API server, not window.location (Vercel).
  */
 export function resolveDownloadUrl(downloadUrl) {
   if (!downloadUrl) throw new Error('Missing download URL');
   const u = String(downloadUrl).trim();
-  if (/^https?:\/\//i.test(u)) {
-    const parsed = new URL(u);
-    if (parsed.pathname.startsWith('/api/downloads/')) {
-      return `${window.location.origin}${parsed.pathname}${parsed.search}`;
-    }
-    return u;
-  }
+  if (/^https?:\/\//i.test(u)) return u;
   const path = u.startsWith('/') ? u : `/${u}`;
-  return `${window.location.origin}${path}`;
+  return `${API_BASE.replace(/\/api\/?$/, '')}${path}`;
 }
 
 export async function downloadOutputFile({ downloadUrl, filename }) {
