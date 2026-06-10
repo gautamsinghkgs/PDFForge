@@ -73,8 +73,8 @@ exports.createOrder = async (req, res) => {
       },
     });
   } catch (err) {
-    console.error('Create order failed:', err.message);
-    res.status(500).json({ success: false, message: 'Failed to create payment order' });
+    console.error('Create order failed:', err);
+    res.status(500).json({ success: false, message: `Failed to create payment order: ${err.message}` });
   }
 };
 

@@ -54,8 +54,15 @@ app.use(
 
 app.use(morgan('combined'));
 
+const ALLOWED_ORIGINS = (process.env.CLIENT_URL || 'http://localhost:3000').split(',').map(s => s.trim()).filter(Boolean);
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
+  origin: (origin, cb) => {
+    if (!origin || ALLOWED_ORIGINS.includes(origin) || process.env.NODE_ENV !== 'production') {
+      cb(null, true);
+    } else {
+      cb(null, ALLOWED_ORIGINS[0]);
+    }
+  },
   credentials: true,
 }));
 
