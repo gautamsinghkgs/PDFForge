@@ -46,7 +46,7 @@ exports.createOrder = async (req, res) => {
 
     const amount = PLAN_PRICES[plan];
     const currency = 'INR';
-    const receipt = `pdfforge_${req.user._id}_${Date.now()}`;
+    const receipt = `pf_${Date.now()}_${req.user._id.toString().slice(-8)}`;
 
     const order = await rzp.orders.create({
       amount,
