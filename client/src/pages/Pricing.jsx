@@ -26,8 +26,8 @@ const PLANS = [
   },
   {
     name: 'Pro',
-    price: 9,
-    desc: 'For professionals and power users',
+    price: 49,
+    desc: 'Limited Launch Offer — ₹49/mo (reg. ₹99)',
     color: '#6c63ff',
     features: [
       'All enabled tools',
@@ -43,8 +43,8 @@ const PLANS = [
   },
   {
     name: 'Enterprise',
-    price: 29,
-    desc: 'For teams and organizations',
+    price: 199,
+    desc: 'Launch pricing — ₹199/mo (reg. ₹299)',
     color: '#f59e0b',
     features: [
       'Everything in Pro',

@@ -20,8 +20,8 @@ function getRazorpay() {
 }
 
 const PLAN_PRICES = {
-  pro: 999,      // ₹999  (₹9 → paise)
-  enterprise: 2999, // ₹2999 (₹29 → paise)
+  pro: 4900,      // ₹49 (in paise)
+  enterprise: 19900, // ₹199 (in paise)
 };
 
 // ── Create Razorpay Order ──
