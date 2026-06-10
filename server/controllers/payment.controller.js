@@ -11,8 +11,10 @@ function getRazorpay() {
   const keyId = process.env.RAZORPAY_KEY_ID;
   const keySecret = process.env.RAZORPAY_KEY_SECRET;
   if (!keyId || !keySecret || keyId === 'rzp_test_xxxxxxxxxxxx') {
+    console.error('Razorpay keys missing or placeholder:', { keyId: keyId ? keyId.slice(0, 10) + '...' : null, hasSecret: !!keySecret });
     return null;
   }
+  console.log('Razorpay init with key:', keyId.slice(0, 10) + '...');
   razorpayInstance = new Razorpay({ key_id: keyId, key_secret: keySecret });
   return razorpayInstance;
 }
@@ -74,7 +76,8 @@ exports.createOrder = async (req, res) => {
     });
   } catch (err) {
     console.error('Create order failed:', err);
-    res.status(500).json({ success: false, message: `Failed to create payment order: ${err.message}` });
+    const errorMessage = err?.message || err?.error?.description || (typeof err === 'object' ? JSON.stringify(err) : String(err));
+    res.status(500).json({ success: false, message: `Failed to create payment order: ${errorMessage}` });
   }
 };
 
@@ -216,7 +219,7 @@ exports.createQRCode = async (req, res) => {
       },
     });
   } catch (err) {
-    console.error('QR code creation failed:', err.message);
-    res.status(500).json({ success: false, message: 'Failed to generate QR code' });
+    console.error('QR code creation failed:', err);
+    res.status(500).json({ success: false, message: `Failed to generate QR code: ${err?.message || JSON.stringify(err)}` });
   }
 };
