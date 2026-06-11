@@ -465,38 +465,6 @@ const SEO_CONTENT = {
       'Merging images into PDF is useful for creating photo albums, combining scanned documents, or preparing image collections for sharing. PDFForge gives you flexible layout options.',
     ],
   },
-  'edit': {
-    title: 'Edit PDF Online Free',
-    paragraphs: [
-      'Edit text and content in your PDF files with PDFForge free Edit PDF tool. Make changes to existing PDF documents without needing expensive software like Adobe Acrobat.',
-      'Our PDF editor lets you modify text, add content, and make corrections to PDF documents. Whether you need to fix a typo, update information, or add notes, PDFForge provides basic editing capabilities.',
-      'Editing PDFs used to require expensive software. PDFForge makes it accessible to everyone — upload your PDF, make changes, and download the updated version. All processing is done securely on our servers.',
-    ],
-  },
-  'compare': {
-    title: 'Compare Two PDF Files Online Free',
-    paragraphs: [
-      'Compare two PDF files side by side to find differences with PDFForge free Compare PDF tool. Upload two versions of a document and identify changes between them.',
-      'PDF comparison is essential for reviewing document revisions, checking contract changes, or verifying updated reports. Our tool highlights differences between the two files for easy review.',
-      'Legal professionals, editors, and quality assurance teams frequently need to compare document versions. PDFForge makes PDF comparison quick and accessible from any browser.',
-    ],
-  },
-  'redact': {
-    title: 'Redact PDF Online Free — Hide Sensitive Information',
-    paragraphs: [
-      'Permanently remove sensitive information from PDF files with PDFForge free Redact PDF tool. Black out text, numbers, or sections that should not be visible before sharing your document.',
-      'Redaction is different from just covering text — it permanently removes the underlying content so it cannot be recovered. Essential for legal documents, contracts, and personal information protection.',
-      'Protect privacy and comply with data protection regulations by redacting sensitive information from PDFs. PDFForge helps you safely share documents without exposing confidential data.',
-    ],
-  },
-  'sign': {
-    title: 'Sign PDF Online Free — Electronic Document Signing',
-    paragraphs: [
-      'Add your signature to PDF documents with PDFForge free Sign PDF tool. Upload your document, place your signature, and download the signed PDF — completely online and free.',
-      'Electronic signatures are legally binding in most countries. Use PDFForge to sign contracts, agreements, consent forms, and other documents without printing, signing, and scanning.',
-      'Save time and paper by signing documents online. PDFForge makes electronic signing accessible to everyone — no account needed for basic use, no app installation required.',
-    ],
-  },
   'protect': {
     title: 'Protect PDF with Password Online Free',
     paragraphs: [
@@ -519,22 +487,6 @@ const SEO_CONTENT = {
       'Extract text from scanned PDFs and images using PDFForge free OCR (Optical Character Recognition) tool. Convert scanned documents into searchable and editable text.',
       'OCR technology recognizes text in scanned images and makes it editable. Use OCR to digitize printed documents, extract quotes from books, or make scanned paperwork searchable.',
       'PDFForge OCR uses Tesseract.js to recognize English text from scanned PDFs. Transform your paper documents into digital, searchable text — perfect for archiving and data extraction.',
-    ],
-  },
-  'ai-summarize': {
-    title: 'AI PDF Summarizer Online Free',
-    paragraphs: [
-      'Summarize long PDF documents with PDFForge free AI Summarizer tool. Upload a PDF and get a concise summary of the key points — saving you time reading lengthy documents.',
-      'Our AI-powered summarization extracts the most important information from your PDF and presents it in a condensed format. Ideal for research papers, reports, articles, and long documents.',
-      'Save hours of reading time by letting AI summarize your documents. PDFForge AI Summarizer helps students, researchers, and professionals quickly grasp the essential content of any PDF.',
-    ],
-  },
-  'ai-translate': {
-    title: 'AI PDF Translator Online Free',
-    paragraphs: [
-      'Translate PDF documents between languages with PDFForge free AI Translate tool. Upload a PDF and get a translated version in your target language while preserving the document structure.',
-      'Break language barriers by translating PDF documents instantly. Our AI translation tool supports multiple languages and helps you understand foreign language documents without manual translation.',
-      'Whether you need to translate a business contract, research paper, or personal document, PDFForge AI translator makes it accessible. Upload, translate, and download your multilingual PDF.',
     ],
   },
 };

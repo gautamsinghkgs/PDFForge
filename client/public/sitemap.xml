@@ -25,16 +25,10 @@
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/jpg-to-pdf</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/html-to-pdf</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/merge-image</loc><priority>0.4</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/edit</loc><priority>0.4</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/compare</loc><priority>0.4</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/redact</loc><priority>0.4</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/sign</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/protect</loc><priority>0.6</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/unlock</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/ocr</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pagenumbers</loc><priority>0.4</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/watermark</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pdfa</loc><priority>0.4</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/ai-summarize</loc><priority>0.4</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/ai-translate</loc><priority>0.4</priority></url>
 </urlset>
