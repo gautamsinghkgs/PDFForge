@@ -17,12 +17,7 @@ export default function Contact() {
               <a href="mailto:gautam16ksingh@gmail.com" style={{ color: 'var(--accent)', fontWeight: 600 }}>gautam16ksingh@gmail.com</a>
             </p>
           </div>
-          <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 28 }}>
-            <h3 style={{ marginBottom: 8 }}>GitHub</h3>
-            <p style={{ color: 'var(--text-muted)' }}>
-              <a href="https://github.com/gautamsinghkgs" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent)', fontWeight: 600 }}>github.com/gautamsinghkgs</a>
-            </p>
-          </div>
+
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 28 }}>
             <h3 style={{ marginBottom: 8 }}>Instagram</h3>
             <p style={{ color: 'var(--text-muted)' }}>
