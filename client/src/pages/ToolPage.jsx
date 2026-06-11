@@ -30,6 +30,7 @@ export default function ToolPage() {
   const [toolLoading, setToolLoading] = useState(true);
   const [downloadBusy, setDownloadBusy] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [guestRemaining, setGuestRemaining] = useState(5);
 
   useEffect(() => {
     setFiles([]); setResult(null); setError('');
@@ -66,6 +67,9 @@ export default function ToolPage() {
         });
         if (retry.data.success) {
           setResult(retry.data.data);
+          if (retry.data.data?.guestRemaining !== undefined) {
+            setGuestRemaining(retry.data.data.guestRemaining);
+          }
         } else {
           throw new Error(retry.data.message || 'Processing failed');
         }
@@ -75,6 +79,9 @@ export default function ToolPage() {
       if (payload) {
         const bytes = parseByteSize(payload.fileSizeBytes ?? payload.size);
         setResult({ ...payload, size: bytes });
+        if (payload.guestRemaining !== undefined) {
+          setGuestRemaining(payload.guestRemaining);
+        }
         
         // Show compression note if present
         if (payload.compressionNote) {
@@ -205,7 +212,7 @@ export default function ToolPage() {
 
                   {!user && (
                     <div style={{ fontSize:'0.78rem', color:'var(--text-muted)', textAlign:'center', marginBottom:8 }}>
-                      Free trial · {GUEST_LIMIT} uses · <Link to="/login" style={{ color:'var(--accent)' }}>Log in</Link> for unlimited
+                      {guestRemaining} / {GUEST_LIMIT} free uses remaining · <Link to="/login" style={{ color:'var(--accent)' }}>Log in</Link> for unlimited
                     </div>
                   )}
                   <button

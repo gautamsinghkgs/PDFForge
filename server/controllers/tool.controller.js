@@ -1317,7 +1317,7 @@ exports.processTool = async (req, res) => {
     } else {
       // ── Guest usage limit ──
       const GuestUsage = require('../models/GuestUsage.model');
-      let guestId = req.body.guestId;
+      const guestId = req.body.guestId;
       if (!guestId) {
         return res.json({ success: false, needGuestId: true, message: 'Guest ID required' });
       }
@@ -1331,6 +1331,7 @@ exports.processTool = async (req, res) => {
       }
       record.count += 1;
       await record.save();
+      req.guestRemaining = 5 - record.count;
     }
 
     const toolLabel = tool.label;
@@ -1396,18 +1397,22 @@ exports.processTool = async (req, res) => {
     // ── Cleanup uploaded input files ──
     cleanupInputFiles(files);
 
+    const responseData = {
+      downloadUrl,
+      filename: result.filename,
+      size: sizeBytes,
+      fileSizeBytes: sizeBytes,
+      historyId: historyEntry?._id,
+      compressionNote,
+      ... (result.ocrData ? { ocrData: result.ocrData } : {}),
+    };
+    if (req.guestRemaining !== undefined) {
+      responseData.guestRemaining = req.guestRemaining;
+    }
     res.json({
       success: true,
       message: `${toolLabel} completed successfully`,
-      data: {
-        downloadUrl,
-        filename: result.filename,
-        size: sizeBytes,
-        fileSizeBytes: sizeBytes,
-        historyId: historyEntry?._id,
-        compressionNote,
-        ... (result.ocrData ? { ocrData: result.ocrData } : {})
-      },
+      data: responseData,
     });
 
   } catch (err) {
