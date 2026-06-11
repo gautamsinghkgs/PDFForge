@@ -1314,6 +1314,23 @@ exports.processTool = async (req, res) => {
       }
       user.tasksToday += 1; user.lastTaskDate = new Date();
       await user.save();
+    } else {
+      // ── Guest usage limit ──
+      const GuestUsage = require('../models/GuestUsage.model');
+      let guestId = req.body.guestId;
+      if (!guestId) {
+        return res.json({ success: false, needGuestId: true, message: 'Guest ID required' });
+      }
+      let record = await GuestUsage.findOne({ guestId });
+      if (!record) {
+        record = await GuestUsage.create({ guestId, count: 0 });
+      }
+      if (record.count >= 5) {
+        cleanupInputFiles(files);
+        return res.status(403).json({ success: false, message: 'GUEST_LIMIT_REACHED' });
+      }
+      record.count += 1;
+      await record.save();
     }
 
     const toolLabel = tool.label;

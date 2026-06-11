@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FiX, FiLoader, FiCheck } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
-import { clearGuestUsage } from '../../utils/guestLimit';
+
 import styles from './LoginModal.module.css';
 
 export default function LoginModal({ onClose }) {
@@ -21,7 +21,6 @@ export default function LoginModal({ onClose }) {
       } else {
         await register(form.name, form.email, form.password);
       }
-      clearGuestUsage();
       onClose();
     } catch (err) {
       setError(err.response?.data?.message || 'Something went wrong. Try again.');

@@ -10,7 +10,7 @@ import { downloadOutputFile } from '../utils/downloadFile';
 import { parseByteSize, formatFileSize } from '../utils/byteSize';
 import { getToolIcon } from '../utils/toolIcons';
 import { useAuth } from '../context/AuthContext';
-import { isGuestLimitReached, incrementGuestUsage, getGuestUsage } from '../utils/guestLimit';
+import { getGuestId, GUEST_LIMIT } from '../utils/guestLimit';
 import styles from './ToolPage.module.css';
 
 const CAT_COLORS = {
@@ -42,27 +42,35 @@ export default function ToolPage() {
   }, [slug]);
 
   const handleProcess = async () => {
-    if (!user && isGuestLimitReached()) {
-      setShowLoginModal(true);
-      return;
-    }
     const htmlByUrl =
       slug === 'html-to-pdf' && String(options.url || options.html_url || '').trim().length > 0;
     if (!files.length && !htmlByUrl) {
       toast.error('Please select a file first');
       return;
     }
-    if (!user) {
-      incrementGuestUsage();
-    }
     setLoading(true); setError(''); setResult(null);
     const fd = new FormData();
     files.forEach(f => fd.append('files', f));
     Object.entries(options).forEach(([k,v]) => fd.append(k, v));
+    if (!user) {
+      fd.append('guestId', getGuestId());
+    }
     try {
       const { data } = await api.post(`/tools/${slug}/process`, fd, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
+      if (data.needGuestId) {
+        fd.set('guestId', data.guestId || getGuestId());
+        const retry = await api.post(`/tools/${slug}/process`, fd, {
+          headers: { 'Content-Type': 'multipart/form-data' },
+        });
+        if (retry.data.success) {
+          setResult(retry.data.data);
+        } else {
+          throw new Error(retry.data.message || 'Processing failed');
+        }
+        return;
+      }
       const payload = data?.data;
       if (payload) {
         const bytes = parseByteSize(payload.fileSizeBytes ?? payload.size);
@@ -86,6 +94,11 @@ export default function ToolPage() {
       toast.success('Done!');
     } catch(err) {
       const msg = err.response?.data?.message || 'Processing failed.';
+      if (msg === 'GUEST_LIMIT_REACHED') {
+        setShowLoginModal(true);
+        setLoading(false);
+        return;
+      }
       setError(msg); toast.error(msg);
     } finally { setLoading(false); }
   };
@@ -192,7 +205,7 @@ export default function ToolPage() {
 
                   {!user && (
                     <div style={{ fontSize:'0.78rem', color:'var(--text-muted)', textAlign:'center', marginBottom:8 }}>
-                      {5 - getGuestUsage()} free uses remaining · <Link to="/login" style={{ color:'var(--accent)' }}>Log in</Link> for unlimited
+                      Free trial · {GUEST_LIMIT} uses · <Link to="/login" style={{ color:'var(--accent)' }}>Log in</Link> for unlimited
                     </div>
                   )}
                   <button

@@ -1,29 +1,26 @@
-const STORAGE_KEY = 'pdfforge_guest_usage';
+const GUEST_ID_KEY = 'pdfforge_guest_id';
 const GUEST_LIMIT = 5;
 
-export function getGuestUsage() {
+function generateId() {
+  return 'guest_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
+}
+
+export function getGuestId() {
   try {
-    return parseInt(localStorage.getItem(STORAGE_KEY), 10) || 0;
+    let id = localStorage.getItem(GUEST_ID_KEY);
+    if (!id) {
+      id = generateId();
+      localStorage.setItem(GUEST_ID_KEY, id);
+    }
+    return id;
   } catch {
-    return 0;
+    return generateId();
   }
-}
-
-export function incrementGuestUsage() {
-  const count = getGuestUsage() + 1;
-  try {
-    localStorage.setItem(STORAGE_KEY, String(count));
-  } catch { /* ignore */ }
-  return count;
-}
-
-export function isGuestLimitReached() {
-  return getGuestUsage() >= GUEST_LIMIT;
 }
 
 export function clearGuestUsage() {
   try {
-    localStorage.removeItem(STORAGE_KEY);
+    localStorage.removeItem(GUEST_ID_KEY);
   } catch { /* ignore */ }
 }
 
