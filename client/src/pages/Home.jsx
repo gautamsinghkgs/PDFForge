@@ -30,13 +30,35 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState('all');
   const [query, setQuery]     = useState('');
   const [loading, setLoading] = useState(true);
+  const [error, setError]     = useState('');
 
-  useEffect(() => {
+  const loadTools = () => {
+    setLoading(true);
+    setError('');
     api.get('/tools')
       .then(({ data }) => setTools(data.tools || []))
-      .catch(() => {})
+      .catch((err) => {
+        const status = err?.response?.status;
+        if (status === 503 || status === 502 || !status) {
+          setError('Server is starting up. Please wait a moment and try again.');
+        } else {
+          setError('Failed to load tools. Check your connection.');
+        }
+      })
       .finally(() => setLoading(false));
+  };
+
+  useEffect(() => {
+    loadTools();
   }, []);
+
+  // Auto-retry when server is cold starting
+  useEffect(() => {
+    if (error && error.includes('starting up')) {
+      const timer = setTimeout(loadTools, 8000);
+      return () => clearTimeout(timer);
+    }
+  }, [error]);
 
   const filtered = useMemo(() => {
     let list = tools;
@@ -127,8 +149,21 @@ export default function Home() {
 
           {/* Tools grid */}
           {loading ? (
-            <div className={styles.grid}>
-              {[...Array(12)].map((_, i) => <div key={i} className={styles.skeletonCard}/>)}
+            <div>
+              <p style={{ textAlign: 'center', color: 'var(--text-muted)', marginBottom: 16, fontSize: '0.85rem' }}>
+                Loading tools{loading ? '…' : ''}
+              </p>
+              <div className={styles.grid}>
+                {[...Array(12)].map((_, i) => <div key={i} className={styles.skeletonCard}/>)}
+              </div>
+            </div>
+          ) : error ? (
+            <div className={styles.empty}>
+              <span className={styles.emptyIcon}>⚠️</span>
+              <p>{error}</p>
+              <button className={styles.emptyBtn} onClick={loadTools}>
+                Retry
+              </button>
             </div>
           ) : filtered.length === 0 ? (
             <div className={styles.empty}>
