@@ -145,7 +145,7 @@ export default function ToolPage() {
   const dropzoneLabel = `Select ${primaryFormat} file`;
 
   return (
-    <div className="page-enter">
+    <>
       {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
         <div className="container">
@@ -307,9 +307,9 @@ export default function ToolPage() {
           </div>
         </div>
       </div>
-    </div>
 
     {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
+    </>
   );
 }
 
