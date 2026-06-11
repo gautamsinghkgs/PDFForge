@@ -14,7 +14,7 @@ export default function Contact() {
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 28 }}>
             <h3 style={{ marginBottom: 8 }}>Email</h3>
             <p style={{ color: 'var(--text-muted)' }}>
-              <a href="mailto:gautamsinghkgs@gmail.com" style={{ color: 'var(--accent)', fontWeight: 600 }}>gautamsinghkgs@gmail.com</a>
+              <a href="mailto:gautam16ksingh@gmail.com" style={{ color: 'var(--accent)', fontWeight: 600 }}>gautam16ksingh@gmail.com</a>
             </p>
           </div>
           <div style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 16, padding: 28 }}>

@@ -40,7 +40,7 @@ export default function Tos() {
         <p>We may update these terms at any time. Continued use after changes constitutes acceptance of the new terms.</p>
 
         <h2 style={{ color: 'var(--text)', marginTop: 32 }}>9. Contact</h2>
-        <p>For questions about these terms, contact <a href="mailto:gautamsinghkgs@gmail.com" style={{ color: 'var(--accent)' }}>gautamsinghkgs@gmail.com</a>.</p>
+        <p>For questions about these terms, contact <a href="mailto:gautam16ksingh@gmail.com" style={{ color: 'var(--accent)' }}>gautam16ksingh@gmail.com</a>.</p>
       </div>
       <div className={styles.cta}>
         <h2>Agree and get started</h2>

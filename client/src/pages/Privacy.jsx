@@ -39,7 +39,7 @@ export default function Privacy() {
         <p>We implement appropriate security measures including HTTPS encryption, input sanitization, and secure authentication to protect your data.</p>
 
         <h2 style={{ color: 'var(--text)', marginTop: 32 }}>7. Contact</h2>
-        <p>For privacy-related inquiries, contact us at <a href="mailto:gautamsinghkgs@gmail.com" style={{ color: 'var(--accent)' }}>gautamsinghkgs@gmail.com</a>.</p>
+        <p>For privacy-related inquiries, contact us at <a href="mailto:gautam16ksingh@gmail.com" style={{ color: 'var(--accent)' }}>gautam16ksingh@gmail.com</a>.</p>
       </div>
       <div className={styles.cta}>
         <h2>Ready to get started?</h2>
