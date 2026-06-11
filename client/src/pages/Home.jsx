@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiX } from 'react-icons/fi';
@@ -31,12 +31,16 @@ export default function Home() {
   const [query, setQuery]     = useState('');
   const [loading, setLoading] = useState(true);
   const [error, setError]     = useState('');
+  const retryCountRef         = useRef(0);
 
   const loadTools = () => {
     setLoading(true);
     setError('');
     api.get('/tools')
-      .then(({ data }) => setTools(data.tools || []))
+      .then(({ data }) => {
+        setTools(data.tools || []);
+        retryCountRef.current = 0;
+      })
       .catch((err) => {
         const status = err?.response?.status;
         if (status === 503 || status === 502 || !status) {
@@ -52,10 +56,15 @@ export default function Home() {
     loadTools();
   }, []);
 
-  // Auto-retry when server is cold starting
+  // Auto-retry then full page reload as final fallback
   useEffect(() => {
     if (error && error.includes('starting up')) {
-      const timer = setTimeout(loadTools, 8000);
+      retryCountRef.current += 1;
+      if (retryCountRef.current >= 2) {
+        window.location.reload();
+        return;
+      }
+      const timer = setTimeout(loadTools, 6000);
       return () => clearTimeout(timer);
     }
   }, [error]);
