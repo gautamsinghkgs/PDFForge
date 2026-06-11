@@ -30,6 +30,7 @@ export default function Navbar() {
           <Link to="/" className={styles.link}>Tools</Link>
           <Link to="/pricing" className={styles.link}>Pricing</Link>
           <Link to="/about" className={styles.link}>About</Link>
+          <Link to="/contact" className={styles.link}>Contact</Link>
         </div>
 
         <div className={styles.actions}>
@@ -75,6 +76,7 @@ export default function Navbar() {
           <Link to="/" className={styles.mLink} onClick={() => setOpen(false)}>All Tools</Link>
           <Link to="/pricing" className={styles.mLink} onClick={() => setOpen(false)}>Pricing</Link>
           <Link to="/about" className={styles.mLink} onClick={() => setOpen(false)}>About</Link>
+          <Link to="/contact" className={styles.mLink} onClick={() => setOpen(false)}>Contact</Link>
           {user
             ? <><Link to="/dashboard" className={styles.mLink} onClick={() => setOpen(false)}>Dashboard</Link><button className={styles.mLink} style={{border:'none',background:'none',textAlign:'left',color:'var(--accent)',cursor:'pointer'}} onClick={handleLogout}>Log out</button></>
             : <div style={{display:'flex',gap:'10px',padding:'12px 0 0'}}><Link to="/login" className="btn-ghost" style={{flex:1,justifyContent:'center'}} onClick={() => setOpen(false)}>Log in</Link><Link to="/register" className="btn-primary" style={{flex:1,justifyContent:'center'}} onClick={() => setOpen(false)}>Sign up</Link></div>

@@ -42,6 +42,7 @@ export default function Footer() {
             <p className={styles.colTitle}>Company</p>
             <Link to="/pricing" className={styles.link}>Pricing</Link>
             <Link to="/about" className={styles.link}>About</Link>
+            <Link to="/contact" className={styles.link}>Contact</Link>
             <Link to="/login" className={styles.link}>Log in</Link>
             <Link to="/register" className={styles.link}>Sign up</Link>
           </div>
@@ -49,8 +50,8 @@ export default function Footer() {
         <div className={styles.bottom}>
           <p>© {new Date().getFullYear()} PDFForge. Created by <strong>Gautam Kumar Singh</strong> — All rights reserved.</p>
           <div className={styles.bottomLinks}>
-            <a href="#" className={styles.link}>Privacy Policy</a>
-            <a href="#" className={styles.link}>Terms of Service</a>
+            <Link to="/privacy" className={styles.link}>Privacy Policy</Link>
+            <Link to="/terms" className={styles.link}>Terms of Service</Link>
           </div>
         </div>
       </div>

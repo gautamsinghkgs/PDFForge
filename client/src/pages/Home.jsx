@@ -194,6 +194,22 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── SEO CONTENT ── */}
+      <section style={{ padding:'48px 24px', background:'#fff', borderTop:'1px solid var(--border)' }}>
+        <div className="container" style={{ maxWidth:720, margin:'0 auto' }}>
+          <h2 style={{ fontFamily:'var(--font-display)', fontSize:'1.5rem', fontWeight:800, marginBottom:16 }}>Free Online PDF Tools — No Installation Required</h2>
+          <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:16 }}>
+            PDFForge is a free online PDF toolkit that lets you merge, split, compress, convert, edit, sign, and secure PDF files directly in your browser. No software download or installation needed. Upload a file, choose your tool, and download the result — it's that simple.
+          </p>
+          <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:16 }}>
+            Need to convert a PDF to Word for editing? Use our PDF to Word converter. Want to combine multiple PDFs into one? The Merge PDF tool handles it in seconds. Compress large PDF files for email, unlock protected PDFs, add watermarks, extract text with OCR, and more — all from one place.
+          </p>
+          <p style={{ color:'var(--text-muted)', lineHeight:1.8 }}>
+            PDFForge works on any device: desktop, tablet, or phone. Files are processed securely on our servers and automatically deleted within one hour. Create a free account to unlock higher usage limits, file history, and priority processing. Upgrade to Pro or Enterprise for unlimited access.
+          </p>
+        </div>
+      </section>
+
       {/* ── HOW IT WORKS ── */}
       <section className={styles.howSection}>
         <div className="container">

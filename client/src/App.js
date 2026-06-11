@@ -12,6 +12,9 @@ import Profile     from './pages/Profile';
 import History     from './pages/History';
 import Pricing     from './pages/Pricing';
 import About       from './pages/About';
+import Privacy     from './pages/Privacy';
+import Tos         from './pages/Tos';
+import Contact     from './pages/Contact';
 import ToolPage    from './pages/ToolPage';
 import NotFound    from './pages/NotFound';
 
@@ -37,6 +40,9 @@ export default function App() {
         <Route path="/"          element={<Home />} />
         <Route path="/pricing"   element={<Pricing />} />
         <Route path="/about"     element={<About />} />
+        <Route path="/privacy"   element={<Privacy />} />
+        <Route path="/terms"     element={<Tos />} />
+        <Route path="/contact"   element={<Contact />} />
         <Route path="/tools/:slug" element={<ToolPage />} />
         <Route path="/login"    element={<GuestRoute><Login /></GuestRoute>} />
         <Route path="/register" element={<GuestRoute><Register /></GuestRoute>} />
