@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import api from '../utils/api';
+import { clearGuestUsage } from '../utils/guestLimit';
 
 const AuthContext = createContext(null);
 
@@ -28,6 +29,7 @@ export const AuthProvider = ({ children }) => {
     sessionStorage.setItem('pdfforge_token', data.token);
     sessionStorage.setItem('pdfforge_user', JSON.stringify(data.user));
     setUser(data.user);
+    clearGuestUsage();
     return data;
   }, []);
 
@@ -36,6 +38,7 @@ export const AuthProvider = ({ children }) => {
     sessionStorage.setItem('pdfforge_token', data.token);
     sessionStorage.setItem('pdfforge_user', JSON.stringify(data.user));
     setUser(data.user);
+    clearGuestUsage();
     return data;
   }, []);
 

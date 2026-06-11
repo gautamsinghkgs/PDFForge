@@ -4,10 +4,13 @@ import { motion } from 'framer-motion';
 import { FiDownload, FiCheckCircle, FiAlertCircle, FiFile, FiInfo } from 'react-icons/fi';
 import toast from 'react-hot-toast';
 import FileDropzone from '../components/ui/FileDropzone';
+import LoginModal from '../components/ui/LoginModal';
 import api from '../utils/api';
 import { downloadOutputFile } from '../utils/downloadFile';
 import { parseByteSize, formatFileSize } from '../utils/byteSize';
 import { getToolIcon } from '../utils/toolIcons';
+import { useAuth } from '../context/AuthContext';
+import { isGuestLimitReached, incrementGuestUsage, getGuestUsage } from '../utils/guestLimit';
 import styles from './ToolPage.module.css';
 
 const CAT_COLORS = {
@@ -17,6 +20,7 @@ const CAT_COLORS = {
 
 export default function ToolPage() {
   const { slug } = useParams();
+  const { user } = useAuth();
   const [tool, setTool] = useState(null);
   const [files, setFiles] = useState([]);
   const [options, setOptions] = useState({});
@@ -25,6 +29,7 @@ export default function ToolPage() {
   const [error, setError] = useState('');
   const [toolLoading, setToolLoading] = useState(true);
   const [downloadBusy, setDownloadBusy] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   useEffect(() => {
     setFiles([]); setResult(null); setError('');
@@ -37,11 +42,18 @@ export default function ToolPage() {
   }, [slug]);
 
   const handleProcess = async () => {
+    if (!user && isGuestLimitReached()) {
+      setShowLoginModal(true);
+      return;
+    }
     const htmlByUrl =
       slug === 'html-to-pdf' && String(options.url || options.html_url || '').trim().length > 0;
     if (!files.length && !htmlByUrl) {
       toast.error('Please select a file first');
       return;
+    }
+    if (!user) {
+      incrementGuestUsage();
     }
     setLoading(true); setError(''); setResult(null);
     const fd = new FormData();
@@ -178,6 +190,11 @@ export default function ToolPage() {
                   />
                   <ToolOptions slug={slug} options={options} setOptions={setOptions}/>
 
+                  {!user && (
+                    <div style={{ fontSize:'0.78rem', color:'var(--text-muted)', textAlign:'center', marginBottom:8 }}>
+                      {5 - getGuestUsage()} free uses remaining · <Link to="/login" style={{ color:'var(--accent)' }}>Log in</Link> for unlimited
+                    </div>
+                  )}
                   <button
                     className={styles.processBtn}
                     onClick={handleProcess}
@@ -291,6 +308,8 @@ export default function ToolPage() {
         </div>
       </div>
     </div>
+
+    {showLoginModal && <LoginModal onClose={() => setShowLoginModal(false)} />}
   );
 }
 
