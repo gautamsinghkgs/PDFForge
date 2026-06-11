@@ -7,14 +7,14 @@ export function About() {
       <div className={styles.hero}>
         <span className={styles.tag}>About PDFForge</span>
         <h1>Built for People Who Work With PDFs</h1>
-        <p>A self-hosted PDF toolkit that combines browser-based uploads with local server processing and open-source conversion tools.</p>
+        <p>PDFForge provides 20+ PDF tools — merge, split, compress, convert, edit, and secure your documents. Fast, reliable, and free to use.</p>
       </div>
       <div className={styles.grid}>
         {[
-          { icon:'🚀', title:'Our Mission', desc:'Make common PDF tasks available from one self-hosted web interface.' },
-          { icon:'🔒', title:'Your Privacy', desc:'Outputs use expiring signed links and are removed from the configured server after 1 hour.' },
-          { icon:'⚡', title:'Local Tools', desc:'Processing uses pdf-lib, Ghostscript, LibreOffice, Tesseract, and a Python conversion service where appropriate.' },
-          { icon:'🌍', title:'Flexible Setup', desc:'Run the application on a machine or server where you control the storage and system dependencies.' },
+          { icon:'🚀', title:'Our Mission', desc:'Make common PDF tasks accessible through a clean, fast web interface — no software installation needed.' },
+          { icon:'🔒', title:'Your Privacy', desc:'Outputs use expiring signed links and are automatically removed after 1 hour.' },
+          { icon:'🛠️', title:'20+ PDF Tools', desc:'From merging and splitting to OCR and format conversion — everything you need in one place.' },
+          { icon:'⚡', title:'Fast Processing', desc:'Built for speed. Upload, process, and download your files in seconds.' },
         ].map(({ icon, title, desc }) => (
           <div key={title} className={styles.card}>
             <span className={styles.cardIcon}>{icon}</span>
