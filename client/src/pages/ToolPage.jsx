@@ -304,13 +304,6 @@ export default function ToolPage() {
                 </div>
               )}
 
-              <div className={styles.sideCard}>
-                <h4>🔑 Powered by</h4>
-                <p style={{ fontSize:'0.82rem', color:'var(--text-muted)', lineHeight:1.7 }}>
-                  Processed on this server with pdf-lib, Ghostscript, LibreOffice, and other open tools — no third-party PDF API required.
-                </p>
-              </div>
-
               {['pdf-to-word', 'pdf-to-excel', 'pdf-to-ppt'].includes(slug) && (
                 <div className={styles.sideCard} style={{ borderColor:'#bbdefb', background:'#f3f8ff' }}>
                   <h4 style={{ color:'#1565c0' }}>PDF → Office: expectations</h4>

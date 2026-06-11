@@ -95,7 +95,6 @@ export default function Home() {
             </h1>
             <p className={styles.heroSub}>
               Merge, split, compress, convert, edit, sign and secure your PDF files.
-              Common PDF workflows in one self-hosted interface with local server processing.
             </p>
 
             {/* ── SEARCH BOX ── */}
@@ -120,10 +119,6 @@ export default function Home() {
               <span className={styles.stat}><b>{tools.length}</b> Enabled Tools</span>
               <span className={styles.statDot}/>
               <span className={styles.stat}><b>100%</b> Free</span>
-              <span className={styles.statDot}/>
-              <span className={styles.stat}><b>Local</b> Processing</span>
-              <span className={styles.statDot}/>
-              <span className={styles.stat}>Self-hosted</span>
             </div>
           </motion.div>
         </div>
@@ -227,7 +222,6 @@ export default function Home() {
             {[
               { icon:'🔐', title:'Private links', desc:'Downloads use expiring signed links instead of public upload paths.' },
               { icon:'🗑️', title:'Auto-deleted', desc:'Output files are deleted from the server after 1 hour.' },
-              { icon:'🌍', title:'Self-hosted', desc:'Processing runs on your configured server without a third-party PDF API.' },
               { icon:'📱', title:'Works anywhere', desc:'Use on any device — desktop, tablet, or phone.' },
             ].map((t,i) => (
               <div key={i} className={styles.trustItem}>
