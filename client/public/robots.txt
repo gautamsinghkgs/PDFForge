@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pdf-forge-k6sd.vercel.app/sitemap.xml

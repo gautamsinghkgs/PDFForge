@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://pdf-forge-k6sd.vercel.app/</loc><priority>1.0</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/pricing</loc><priority>0.8</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/about</loc><priority>0.7</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/login</loc><priority>0.3</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/register</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/dashboard</loc><priority>0.3</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/profile</loc><priority>0.3</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/history</loc><priority>0.3</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/merge</loc><priority>0.6</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/split</loc><priority>0.6</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/rotate</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/compress</loc><priority>0.7</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pdf-to-word</loc><priority>0.6</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pdf-to-ppt</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pdf-to-excel</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pdf-to-jpg</loc><priority>0.6</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/word-to-pdf</loc><priority>0.6</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/ppt-to-pdf</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/excel-to-pdf</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/jpg-to-pdf</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/html-to-pdf</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/merge-image</loc><priority>0.4</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/edit</loc><priority>0.4</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/compare</loc><priority>0.4</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/redact</loc><priority>0.4</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/sign</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/protect</loc><priority>0.6</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/unlock</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/ocr</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pagenumbers</loc><priority>0.4</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/watermark</loc><priority>0.5</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/pdfa</loc><priority>0.4</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/ai-summarize</loc><priority>0.4</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/tools/ai-translate</loc><priority>0.4</priority></url>
+</urlset>
