@@ -31,9 +31,9 @@ const SEO_CONTENT = {
   'compress': {
     title: 'Compress PDF Files Online Free \u2014 Reduce PDF Size',
     sections: [
-      { subtitle: 'How to Compress a PDF File', text: 'Large PDF files are difficult to email, upload, or share. Compressing a PDF reduces file size while keeping the content readable. Our free online PDF compressor helps you shrink PDF files for faster uploads without losing important detail.' },
-      { subtitle: 'Benefits of PDF Compression', text: 'Our compression tool reduces PDF file size by optimizing images, removing redundant metadata, and applying efficient encoding. Choose from three levels: Extreme for maximum reduction, Recommended for balanced quality, or Less compression for minimal changes. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Compressor Tool', text: 'Simply upload your PDF, choose your compression level, wait a few seconds for processing, and download your reduced file instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'How to Compress a PDF File', text: 'Large PDF files are harder to email, upload, and share, especially on websites with file size limits. Compressing a PDF reduces file size while keeping the content readable. Use our free online PDF compressor to shrink PDF file size and optimize PDF documents for faster sharing.' },
+      { subtitle: 'Benefits of PDF Compression', text: 'Our compression tool helps reduce PDF file size online by optimizing images, removing redundant metadata, and applying efficient encoding. Choose from three levels: Extreme for maximum reduction, Recommended for balanced quality, or Less compression for minimal changes. Compressed PDFs load faster on websites and use less storage space. Files up to 100 MB are supported.' },
+      { subtitle: 'Secure Online PDF Compressor Tool', text: 'Upload your PDF, select a compression level, and download the optimized file in seconds. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never access or share your documents.' },
     ],
     faqs: [
