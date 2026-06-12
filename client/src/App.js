@@ -3,6 +3,7 @@ import { useAuth } from './context/AuthContext';
 
 import Navbar      from './components/layout/Navbar';
 import Footer      from './components/layout/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 import Home        from './pages/Home';
 import Login       from './pages/Login';
@@ -36,6 +37,7 @@ const GuestRoute = ({ children }) => {
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/"          element={<Home />} />
