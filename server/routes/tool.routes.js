@@ -8,6 +8,20 @@ const upload = require('../middleware/upload.middleware');
 // ── List all tools (public) ──
 router.get('/', getAllTools);
 
+// ── Get guest remaining uses (public) ──
+router.get('/guest-remaining', async (req, res) => {
+  try {
+    const GuestUsage = require('../models/GuestUsage.model');
+    const { guestId } = req.query;
+    if (!guestId) return res.json({ success: true, remaining: 5 });
+    const record = await GuestUsage.findOne({ guestId });
+    const used = record ? record.count : 0;
+    res.json({ success: true, remaining: Math.max(0, 5 - used) });
+  } catch {
+    res.json({ success: true, remaining: 5 });
+  }
+});
+
 // ── Get single tool info (public) ──
 router.get('/:slug/info', getToolBySlug);
 

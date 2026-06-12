@@ -40,6 +40,14 @@ export default function ToolPage() {
       .then(({ data }) => setTool(data.tool))
       .catch(() => setTool(null))
       .finally(() => setToolLoading(false));
+    // Fetch guest remaining uses
+    if (!user) {
+      api.get(`/tools/guest-remaining?guestId=${getGuestId()}`)
+        .then(({ data }) => {
+          if (data.remaining !== undefined) setGuestRemaining(data.remaining);
+        })
+        .catch(() => {});
+    }
   }, [slug]);
 
   const handleProcess = async () => {
