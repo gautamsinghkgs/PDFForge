@@ -2,8 +2,8 @@ name: Ping Render (prevent cold start)
 
 on:
   schedule:
-    # Every 10 minutes — Render free tier spins down after 15 min idle
-    - cron: '*/10 * * * *'
+    # Every 5 minutes — Render free tier spins down after 15 min idle
+    - cron: '*/5 * * * *'
   workflow_dispatch: # manual trigger
 
 jobs:
