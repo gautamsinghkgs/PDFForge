@@ -335,180 +335,73 @@ export default function ToolPage() {
   );
 }
 
-// ── SEO content per tool ─────────────────────────────────────
-const SEO_CONTENT = {
-  'merge': {
-    title: 'Merge PDF Files Online Free',
-    paragraphs: [
-      'Combine multiple PDF files into a single document with PDFForge free Merge PDF tool. Upload two or more PDF files, arrange them in your preferred order, and instantly download the merged result. No signup required for basic use.',
-      'Our Merge PDF tool supports unlimited PDF files in a single session. The files are processed in the order you upload them. Use this tool to combine chapters, consolidate reports, merge scanned documents, or create a unified PDF from multiple sources.',
-      'Merging PDFs is useful for professionals who receive separate attachments and need one cohesive file. Students can combine lecture notes, business users can merge invoices, and anyone can consolidate related documents into one organized PDF.',
-    ],
-  },
-  'split': {
-    title: 'Split PDF Pages Online Free',
-    paragraphs: [
-      'Split a large PDF into multiple smaller files using PDFForge free Split PDF tool. Choose to split every page into individual files, extract specific page ranges, or remove unwanted pages from your document.',
-      'The Split PDF tool offers three modes: "Split all pages" creates one file per page, "By fixed ranges" groups pages into chunks (e.g., every 2 pages), and "Remove pages" deletes selected pages while keeping the rest. All processing happens on our secure servers.',
-      'Splitting PDFs helps when you need to share only specific sections of a document. Remove cover pages, extract chapters, or break a large report into manageable parts. Your files are automatically deleted after processing.',
-    ],
-  },
-  'compress': {
-    title: 'Compress PDF Files Online Free — Reduce PDF Size',
-    paragraphs: [
-      'Reduce the size of your PDF files without losing quality using PDFForge free Compress PDF tool. Choose from three compression levels: Extreme for maximum size reduction, Recommended for balanced quality and size, or Less compression for minimal changes.',
-      'Large PDF files can be difficult to email or upload. Our compression tool reduces file size by optimizing images, removing redundant data, and applying efficient encoding. Perfect for making documents email-friendly or saving storage space.',
-      'Compressed PDFs load faster on websites and use less bandwidth when shared. Whether you need to meet an email attachment limit or free up disk space, PDFForge compression delivers results in seconds.',
-    ],
-  },
-  'rotate': {
-    title: 'Rotate PDF Pages Online Free',
-    paragraphs: [
-      'Fix incorrectly oriented PDF pages with PDFForge free Rotate PDF tool. Rotate pages 90 degrees clockwise, 180 degrees, or 90 degrees counter-clockwise. All pages in the document are rotated uniformly.',
-      'Scanned documents often come out sideways or upside down. Instead of straining your neck or printing and re-scanning, use our Rotate PDF tool to fix orientation in one click. Works with any PDF file.',
-      'Rotating PDFs is essential when dealing with documents from different sources — scanned contracts, imported images, or downloaded files may have mixed page orientations. Set them right with PDFForge.',
-    ],
-  },
-  'pagenumbers': {
-    title: 'Add Page Numbers to PDF Online Free',
-    paragraphs: [
-      'Add page numbers to your PDF documents with PDFForge free Page Numbers tool. Choose where to display numbers — bottom center, bottom right, top center, and more. Customize the starting number and format.',
-      'Professional documents need page numbers for easy reference. Add them to reports, ebooks, manuals, theses, or legal documents. Our tool inserts page numbers without affecting the existing content.',
-      'Page numbers make navigation easier for readers. Whether you are preparing a business proposal or formatting a book manuscript, PDFForge helps you add page numbers quickly and accurately.',
-    ],
-  },
-  'watermark': {
-    title: 'Add Watermark to PDF Online Free',
-    paragraphs: [
-      'Protect your PDF documents by adding text watermarks with PDFForge free Watermark tool. Type your watermark text — such as "CONFIDENTIAL", "DRAFT", or "SAMPLE" — and it will be applied across all pages.',
-      'Watermarks help protect your intellectual property and indicate document status. Mark drafts as "DRAFT" to prevent premature distribution, or mark sensitive documents as "CONFIDENTIAL" to remind readers of handling requirements.',
-      'Adding watermarks is a simple yet effective way to communicate document status or ownership. Use PDFForge to watermark contracts, proposals, designs, or any PDF before sharing.',
-    ],
-  },
-  'pdfa': {
-    title: 'Convert PDF to PDF/A Online Free',
-    paragraphs: [
-      'Convert your PDF files to PDF/A format for long-term archiving with PDFForge free PDF/A tool. Choose from PDF/A-1b, PDF/A-2b, or PDF/A-3b compliance levels depending on your archiving requirements.',
-      'PDF/A is an ISO-standardized version of PDF designed for digital preservation. It ensures documents look the same when viewed years later by embedding all fonts, prohibiting external dependencies, and requiring self-contained metadata.',
-      'Government agencies, legal firms, and archives often require PDF/A submission. Convert your regular PDFs to PDF/A compliant format with PDFForge and ensure your documents stand the test of time.',
-    ],
-  },
-  'pdf-to-word': {
-    title: 'Convert PDF to Word (DOC/DOCX) Online Free',
-    paragraphs: [
-      'Convert PDF files to editable Word documents with PDFForge free PDF to Word converter. Extract text content from PDFs and get DOCX files that you can edit in Microsoft Word, Google Docs, or LibreOffice.',
-      'Need to edit text from a PDF but do not have the original source file? Our PDF to Word converter extracts text content while preserving basic structure. Perfect for repurposing content from reports, articles, or scanned documents.',
-      'PDF to Word conversion is one of the most requested document tasks. Students convert research papers, professionals repurpose reports, and anyone who needs to edit a PDF without starting from scratch uses this tool.',
-    ],
-  },
-  'pdf-to-ppt': {
-    title: 'Convert PDF to PowerPoint (PPT/PPTX) Online Free',
-    paragraphs: [
-      'Turn your PDF files into editable PowerPoint presentations with PDFForge free PDF to PPT converter. Each PDF page becomes a slide in the resulting PPTX file, ready for further editing.',
-      'Converting PDF to PPT is useful when you receive a presentation in PDF format but need to edit or present it in PowerPoint. Our tool rebuilds slides from PDF pages, preserving text content and basic structure.',
-      'Business professionals and educators frequently need to convert PDFs back to editable formats. PDFForge makes it simple — upload, convert, and download your editable PowerPoint file in seconds.',
-    ],
-  },
-  'pdf-to-excel': {
-    title: 'Convert PDF to Excel (XLS/XLSX) Online Free',
-    paragraphs: [
-      'Extract tables and data from PDF files into editable Excel spreadsheets with PDFForge free PDF to Excel converter. Get XLSX files that you can edit in Microsoft Excel, Google Sheets, or LibreOffice Calc.',
-      'PDF to Excel conversion helps when you receive financial reports, data tables, or forms in PDF format but need to analyze the data in a spreadsheet. Our tool recovers text content and basic table structure.',
-      'Data analysts, accountants, and researchers frequently need to convert PDF tables into editable spreadsheets. PDFForge simplifies this workflow — upload your PDF and download a working Excel file.',
-    ],
-  },
-  'pdf-to-jpg': {
-    title: 'Convert PDF to JPG Images Online Free',
-    paragraphs: [
-      'Convert each page of your PDF into high-quality JPG images with PDFForge free PDF to JPG converter. Choose from 72 DPI (low), 150 DPI (medium), or 300 DPI (high) output quality depending on your needs.',
-      'PDF to JPG conversion is useful when you need to use PDF pages as images in presentations, websites, social media posts, or documents. Each page is rendered as a separate JPG image file.',
-      'Whether you need thumbnails for quick previews or high-resolution images for printing, PDFForge PDF to JPG converter handles it. Upload your PDF, select quality, and download individual JPG files per page.',
-    ],
-  },
-  'html-to-pdf': {
-    title: 'Convert HTML to PDF Online Free — Webpage to PDF',
-    paragraphs: [
-      'Convert any webpage or HTML file to PDF with PDFForge free HTML to PDF converter. Enter a URL or upload an HTML file, and get a clean PDF rendering of the web content.',
-      'Save web articles, documentation pages, receipts, or any online content as PDF files for offline reading or archiving. Our tool renders the page using a full browser engine for accurate results.',
-      'HTML to PDF conversion is essential for saving online content, creating printable versions of web pages, or generating PDF invoices from HTML templates. PDFForge makes it easy and free.',
-    ],
-  },
-  'word-to-pdf': {
-    title: 'Convert Word to PDF Online Free — DOC/DOCX to PDF',
-    paragraphs: [
-      'Convert Microsoft Word documents (DOC/DOCX) to PDF format with PDFForge free Word to PDF converter. Upload your file and download a perfectly formatted PDF — no software installation needed.',
-      'Word to PDF conversion ensures your document looks the same on any device. Fonts, layout, images, and formatting are preserved in the PDF output. Perfect for sharing documents professionally.',
-      'Whether you are sending a resume, a business proposal, or a report, converting Word to PDF ensures the recipient sees exactly what you intended. PDFForge handles the conversion quickly and securely.',
-    ],
-  },
-  'ppt-to-pdf': {
-    title: 'Convert PowerPoint to PDF Online Free — PPT/PPTX to PDF',
-    paragraphs: [
-      'Convert PowerPoint presentations (PPT/PPTX) to PDF format with PDFForge free PPT to PDF converter. Each slide becomes a PDF page, preserving your presentation layout and content.',
-      'Converting PowerPoint to PDF is ideal when you need to share presentations that cannot be edited. PDF files are smaller, universal, and professional. Perfect for distributing slide decks to clients or colleagues.',
-      'PPT to PDF conversion locks in your formatting so slides look identical on any device. Use PDFForge to convert presentations for handouts, archives, or distribution without worrying about font or version issues.',
-    ],
-  },
-  'excel-to-pdf': {
-    title: 'Convert Excel to PDF Online Free — XLS/XLSX to PDF',
-    paragraphs: [
-      'Convert Excel spreadsheets (XLS/XLSX) to PDF format with PDFForge free Excel to PDF converter. Your tables, charts, and data are preserved in the PDF output.',
-      'Excel to PDF conversion is useful when sharing financial data, reports, or invoices. PDF ensures the recipient sees exactly your formatting — no missing fonts or shifted columns.',
-      'Send professional PDF reports from your Excel data. PDFForge converts spreadsheets to clean PDF files that can be viewed on any device. Upload, convert, and download in seconds.',
-    ],
-  },
-  'jpg-to-pdf': {
-    title: 'Convert JPG Images to PDF Online Free — Image to PDF',
-    paragraphs: [
-      'Convert JPG, PNG, WEBP, and other images to PDF format with PDFForge free Image to PDF converter. Upload one or multiple images and combine them into a single PDF document.',
-      'Our Image to PDF tool supports multiple images in one session. Arrange images in your preferred order and download them as a unified PDF. Perfect for creating photo albums, scanning documents, or converting camera shots to PDF.',
-      'Whether you are digitizing printed documents, creating a portfolio, or combining scanned pages, PDFForge Image to PDF converter handles multiple formats and delivers a clean PDF output.',
-    ],
-  },
-  'merge-image': {
-    title: 'Merge Images into PDF Online Free',
-    paragraphs: [
-      'Combine multiple images into a single PDF document with PDFForge free Merge Images tool. Choose between A4 single page layout (all images on one page) or A4 multi-page (images distributed across pages).',
-      'Our Merge Images tool offers two layout options: Single Page arranges all images on one A4 page, while Multi-Page distributes images across multiple A4 pages. Choose High or Low quality output depending on your needs.',
-      'Merging images into PDF is useful for creating photo albums, combining scanned documents, or preparing image collections for sharing. PDFForge gives you flexible layout options.',
-    ],
-  },
-  'protect': {
-    title: 'Protect PDF with Password Online Free',
-    paragraphs: [
-      'Add password protection to your PDF files with PDFForge free Protect PDF tool. Set a password that recipients must enter to open your document. Choose any password you like.',
-      'Password-protecting PDFs prevents unauthorized access to sensitive documents. Use this tool to secure contracts, financial statements, personal records, or any confidential information before sharing.',
-      'PDF protection is essential for document security. PDFForge applies strong encryption to your PDF, ensuring only people with the password can view the content. Your privacy matters.',
-    ],
-  },
-  'unlock': {
-    title: 'Unlock PDF — Remove Password from PDF Online Free',
-    paragraphs: [
-      'Remove password protection from PDF files with PDFForge free Unlock PDF tool. If you know the password, you can remove it to create an unrestricted PDF that anyone can open.',
-      'Forgot you password-protected a PDF and need to open it? Or received a protected document and have the password? Our Unlock PDF tool removes the password restriction so the file opens freely.',
-      'Unlocking PDFs is useful when password protection is no longer needed. Remove passwords from your own documents for easier sharing and access. PDFForge handles the process securely.',
-    ],
-  },
-  'ocr': {
-    title: 'OCR PDF Online Free — Extract Text from Scanned PDF',
-    paragraphs: [
-      'Extract text from scanned PDFs and images using PDFForge free OCR (Optical Character Recognition) tool. Convert scanned documents into searchable and editable text.',
-      'OCR technology recognizes text in scanned images and makes it editable. Use OCR to digitize printed documents, extract quotes from books, or make scanned paperwork searchable.',
-      'PDFForge OCR uses Tesseract.js to recognize English text from scanned PDFs. Transform your paper documents into digital, searchable text — perfect for archiving and data extraction.',
-    ],
-  },
+import SEO_CONTENT from '../utils/toolSeoContent';
+
+const labelMap = {
+  'merge': 'Merge PDF', 'split': 'Split PDF', 'compress': 'Compress PDF', 'rotate': 'Rotate PDF',
+  'pagenumbers': 'Page Numbers', 'watermark': 'Watermark', 'pdfa': 'PDF to PDF/A',
+  'pdf-to-word': 'PDF to Word', 'pdf-to-ppt': 'PDF to PPT', 'pdf-to-excel': 'PDF to Excel',
+  'pdf-to-jpg': 'PDF to JPG', 'html-to-pdf': 'HTML to PDF', 'word-to-pdf': 'Word to PDF',
+  'ppt-to-pdf': 'PPT to PDF', 'excel-to-pdf': 'Excel to PDF', 'jpg-to-pdf': 'JPG to PDF',
+  'merge-image': 'Merge Image', 'protect': 'Protect PDF', 'unlock': 'Unlock PDF', 'ocr': 'OCR PDF',
 };
 
 function ToolSeoContent({ slug, tool }) {
   const content = SEO_CONTENT[slug];
   if (!content || !tool) return null;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: (content.faqs || []).map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
   return (
-    <section style={{ marginTop: 40, marginBottom: 40 }}>
-      <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 800, marginBottom: 16 }}>{content.title}</h2>
-      {content.paragraphs.map((p, i) => (
-        <p key={i} style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 12, fontSize: "0.92rem" }}>{p}</p>
-      ))}
-    </section>
+    <>
+      <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+      <section style={{ marginTop: 40, marginBottom: 40 }}>
+        <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 800, marginBottom: 16 }}>{content.title}</h2>
+        {content.paragraphs.map((p, i) => (
+          <p key={i} style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 12, fontSize: "0.92rem" }}>{p}</p>
+        ))}
+        {content.faqs && content.faqs.length > 0 && (
+          <div style={{ marginTop: 32 }}>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 700, marginBottom: 16 }}>Frequently Asked Questions</h3>
+            {content.faqs.map((faq, i) => (
+              <div key={i} style={{ marginBottom: 16, padding: '16px 20px', background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 12 }}>
+                <h4 style={{ fontWeight: 600, marginBottom: 6, fontSize: '0.95rem' }}>{faq.q}</h4>
+                <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: 1.7, margin: 0 }}>{faq.a}</p>
+              </div>
+            ))}
+          </div>
+        )}
+        {content.related && content.related.length > 0 && (
+          <div style={{ marginTop: 32, paddingTop: 24, borderTop: '1px solid var(--border)' }}>
+            <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1rem", fontWeight: 700, marginBottom: 12 }}>Related Tools</h3>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              {content.related.map(s => {
+                const label = labelMap[s];
+                if (!label) return null;
+                return (
+                  <Link key={s} to={`/tools/${s}`} style={{
+                    padding: '8px 16px', borderRadius: 8, border: '1px solid var(--border)',
+                    textDecoration: 'none', color: 'var(--text)', fontSize: '0.85rem',
+                    background: 'var(--bg2)', transition: 'all 0.15s',
+                  }}
+                  onMouseEnter={e => { e.target.style.borderColor = 'var(--accent)'; e.target.style.color = 'var(--accent)'; }}
+                  onMouseLeave={e => { e.target.style.borderColor = ''; e.target.style.color = ''; }}
+                  >
+                    {label} →
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
+      </section>
+    </>
   );
 }
 
