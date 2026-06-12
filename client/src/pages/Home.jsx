@@ -204,6 +204,9 @@ export default function Home() {
           <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:16 }}>
             Need to convert a PDF to Word for editing? Use our PDF to Word converter. Want to combine multiple PDFs into one? The Merge PDF tool handles it in seconds. Edit PDFs, rotate pages, add watermarks, convert images, and organize documents online for free. Compress large PDF files for email, unlock protected PDFs, extract text with OCR, and more — all from one place.
           </p>
+          <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:16 }}>
+            PDFForge was built to provide fast, secure, and easy-to-use PDF tools without requiring expensive software or complicated installations. Whether you are a student, freelancer, or business professional, our platform handles all your PDF needs in one place — entirely online.
+          </p>
 
           <h2 style={{ fontFamily:'var(--font-display)', fontSize:'1.2rem', fontWeight:700, marginTop:28, marginBottom:10 }}>How It Works</h2>
           <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:12 }}>
