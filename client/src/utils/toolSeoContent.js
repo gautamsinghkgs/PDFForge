@@ -2,9 +2,9 @@ const SEO_CONTENT = {
   'merge': {
     title: 'Merge PDF Files Online Free \u2014 Combine PDFs Instantly',
     sections: [
-      { subtitle: 'How to Merge PDF Files', text: 'Combining multiple PDF files into a single document saves time and keeps your files organized. Whether you are consolidating reports, combining scanned documents, or merging invoices, our free online PDF merger makes it easy to process PDF files online. No signup required, and you can merge unlimited PDFs in one session.' },
+      { subtitle: 'How to Merge PDF Files', text: 'Combining multiple PDF files into a single document saves time and keeps your files organized. Whether you are consolidating reports, combining scanned documents, or merging invoices, our free online PDF merger makes it easy to combine PDF documents online. No signup required, and you can merge unlimited PDFs in one session.' },
       { subtitle: 'Benefits of Merging PDFs', text: 'PDFForge merge PDF tool combines your files without re-encoding the content, so quality stays intact. Each page retains its original resolution, fonts, and formatting. The merged output preserves all elements from your source files. Files up to 100 MB each are supported.' },
-      { subtitle: 'Secure Online PDF Merger Tool', text: 'Simply upload your files in the order you want them to appear, then click the Merge button. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Merger Tool', text: 'Simply upload your PDF files in the order you want them to appear, wait a few seconds for processing, and download the merged PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties. Your privacy is our priority.' },
     ],
     faqs: [
@@ -17,9 +17,9 @@ const SEO_CONTENT = {
   'split': {
     title: 'Split PDF Pages Online Free \u2014 Extract Pages from PDF',
     sections: [
-      { subtitle: 'How to Split a PDF File', text: 'Large PDFs with many pages are hard to navigate and share. Splitting a PDF lets you extract specific chapters, remove cover pages, or break a document into smaller files. Use our online PDF splitter tool to separate pages quickly without installing any software.' },
+      { subtitle: 'How to Split a PDF File', text: 'Large PDFs with many pages are hard to navigate and share. Splitting a PDF lets you extract specific chapters, remove cover pages, or break a document into smaller files. Use our free PDF page splitter tool to separate pages quickly without installing any software.' },
       { subtitle: 'Benefits of Splitting PDFs', text: 'Our PDF splitter offers three modes: Split all pages creates one PDF per page, By fixed ranges groups pages into chunks, and Remove pages deletes selected pages. The output is downloaded as a ZIP file containing individual PDFs. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Splitter Tool', text: 'Upload your PDF, choose your split mode, and click Split. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Splitter Tool', text: 'Simply upload your PDF, choose your split mode, wait a few seconds for processing, and download the split PDF files instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties.' },
     ],
     faqs: [
@@ -31,9 +31,9 @@ const SEO_CONTENT = {
   'compress': {
     title: 'Compress PDF Files Online Free \u2014 Reduce PDF Size',
     sections: [
-      { subtitle: 'How to Compress a PDF File', text: 'Large PDF files are difficult to email, upload, or share. Compressing a PDF reduces file size while keeping the content readable. Our online PDF compressor helps you shrink PDF files for faster uploads without losing important detail.' },
+      { subtitle: 'How to Compress a PDF File', text: 'Large PDF files are difficult to email, upload, or share. Compressing a PDF reduces file size while keeping the content readable. Our free online PDF compressor helps you shrink PDF files for faster uploads without losing important detail.' },
       { subtitle: 'Benefits of PDF Compression', text: 'Our compression tool reduces PDF file size by optimizing images, removing redundant metadata, and applying efficient encoding. Choose from three levels: Extreme for maximum reduction, Recommended for balanced quality, or Less compression for minimal changes. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Compressor Tool', text: 'Upload your PDF, choose your compression level, and click Compress. Compressed PDFs load faster on websites and use less bandwidth when shared. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Compressor Tool', text: 'Simply upload your PDF, choose your compression level, wait a few seconds for processing, and download your reduced file instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never access or share your documents.' },
     ],
     faqs: [
@@ -47,7 +47,7 @@ const SEO_CONTENT = {
     sections: [
       { subtitle: 'How to Rotate PDF Pages', text: 'Scanned documents and uploaded PDFs often have pages in the wrong orientation. Instead of printing and re-scanning, use our free PDF rotator to fix page angles in seconds. Save time and avoid the hassle of manual document correction.' },
       { subtitle: 'Benefits of Rotating PDFs', text: 'Rotate pages 90 degrees clockwise, 180 degrees, or 90 degrees counter-clockwise. All pages are rotated uniformly for consistent results. The tool uses pdf-lib for fast processing and does not re-encode your content, so quality stays the same. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Rotator Tool', text: 'Upload your PDF, select the rotation angle, and download the corrected file instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Rotator Tool', text: 'Simply upload your PDF, select the rotation angle, wait a few seconds for processing, and download the corrected file instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties.' },
     ],
     faqs: [
@@ -59,9 +59,9 @@ const SEO_CONTENT = {
   'pagenumbers': {
     title: 'Add Page Numbers to PDF Online Free',
     sections: [
-      { subtitle: 'How to Add Page Numbers to PDF', text: 'Professional documents need page numbers for easy navigation and reference. Whether it is a report, ebook, manual, thesis, or legal contract, page numbers help readers find information quickly and keep pages in order.' },
+      { subtitle: 'How to Add Page Numbers to PDF', text: 'Professional documents need page numbers for easy navigation and reference. Whether it is a report, ebook, manual, thesis, or legal contract, page numbers help readers find information quickly and keep pages in order. Use our free online PDF numbering tool.' },
       { subtitle: 'Benefits of Page Numbering', text: 'Choose where to display page numbers including bottom center, bottom right, top center, and other positions. Customize the starting number and format from numeric, roman numerals, or alphabetic. Page numbers are added as annotations without affecting existing content. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Page Number Tool', text: 'Upload your PDF, select your preferred position and format, and click Add. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Page Number Tool', text: 'Simply upload your PDF, select your preferred position and format, wait a few seconds for processing, and download the numbered PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties.' },
     ],
     faqs: [
@@ -73,9 +73,9 @@ const SEO_CONTENT = {
   'watermark': {
     title: 'Add Watermark to PDF Online Free \u2014 Protect Your Documents',
     sections: [
-      { subtitle: 'How to Add a Watermark to PDF', text: 'Protect your intellectual property and communicate document status with watermarks. Mark drafts as DRAFT, label sensitive files as CONFIDENTIAL, or stamp preview copies as SAMPLE. Watermarks discourage unauthorized use and clearly indicate document handling requirements.' },
+      { subtitle: 'How to Add a Watermark to PDF', text: 'Protect your intellectual property and communicate document status with watermarks. Mark drafts as DRAFT, label sensitive files as CONFIDENTIAL, or stamp preview copies as SAMPLE. Use our free PDF watermark tool to discourage unauthorized use of your documents.' },
       { subtitle: 'Benefits of Watermarking PDFs', text: 'Type your watermark text and it will be applied diagonally across all pages for maximum visibility. The watermark is embedded into the PDF content, making it difficult to remove. Legal firms watermark contracts, designers protect portfolios, and businesses mark internal documents. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Watermark Tool', text: 'Upload your PDF, enter your watermark text (CONFIDENTIAL, DRAFT, SAMPLE, etc.), and click Add Watermark. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Watermark Tool', text: 'Simply upload your PDF, enter your watermark text (CONFIDENTIAL, DRAFT, SAMPLE, etc.), wait a few seconds for processing, and download the watermarked PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties.' },
     ],
     faqs: [
@@ -87,9 +87,9 @@ const SEO_CONTENT = {
   'pdfa': {
     title: 'Convert PDF to PDF/A Online Free \u2014 Archive-Ready Documents',
     sections: [
-      { subtitle: 'How to Convert PDF to PDF/A', text: 'Government agencies, legal firms, libraries, and archives require PDF/A for long-term document storage. This ISO-standardized format ensures your documents remain accessible and identical for decades. Use our PDF to PDF/A converter for compliance and digital preservation.' },
+      { subtitle: 'How to Convert PDF to PDF/A', text: 'Government agencies, legal firms, libraries, and archives require PDF/A for long-term document storage. This ISO-standardized format ensures your documents remain accessible and identical for decades. Use our free PDF to PDF/A converter for compliance and digital preservation.' },
       { subtitle: 'Benefits of PDF/A Format', text: 'PDF/A embeds all fonts, prohibits external dependencies, and requires self-contained metadata. Choose from PDF/A-1b for basic archiving, PDF/A-2b with transparency support, or PDF/A-3b which allows embedding external files. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF/A Converter', text: 'Upload your PDF, select your desired compliance level, and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF/A Converter', text: 'Simply upload your PDF, select your desired compliance level, wait a few seconds for processing, and download the archive-ready PDF/A instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties.' },
     ],
     faqs: [
@@ -101,9 +101,9 @@ const SEO_CONTENT = {
   'pdf-to-word': {
     title: 'Convert PDF to Word (DOC/DOCX) Online Free',
     sections: [
-      { subtitle: 'How to Convert PDF to Word', text: 'Need to edit text from a PDF but lost the original file? Our PDF to Word converter gives you an editable DOCX file you can modify in Microsoft Word, Google Docs, or LibreOffice. It is the easiest way to repurpose content from reports and contracts without retyping.' },
+      { subtitle: 'How to Convert PDF to Word', text: 'Need to edit text from a PDF but lost the original file? Our free PDF to Word converter gives you an editable DOCX file you can modify in Microsoft Word, Google Docs, or LibreOffice. Easily convert PDF documents to Word online without retyping content.' },
       { subtitle: 'Benefits of Converting PDF to DOCX', text: 'Our PDF to Word converter extracts text while preserving basic document structure. Use this online Word to PDF tool alternative to turn PDFs into editable DOCX files. Perfect for students, professionals, and legal teams who need to modify PDF content. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF to Word Converter', text: 'Simply upload your PDF and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF to Word Converter', text: 'Simply upload your PDF, wait a few seconds for processing, and download the editable DOCX instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties.' },
     ],
     faqs: [
@@ -116,9 +116,9 @@ const SEO_CONTENT = {
   'pdf-to-ppt': {
     title: 'Convert PDF to PowerPoint (PPT/PPTX) Online Free',
     sections: [
-      { subtitle: 'How to Convert PDF to PowerPoint', text: 'Received a presentation in PDF format but need to edit it in PowerPoint? Our PDF to PPT converter rebuilds each PDF page as a slide, giving you an editable PPTX file you can modify, reorder, and enhance in Microsoft PowerPoint, Google Slides, or LibreOffice Impress.' },
+      { subtitle: 'How to Convert PDF to PowerPoint', text: 'Received a presentation in PDF format but need to edit it in PowerPoint? Our free PDF to PPT converter rebuilds each PDF page as a slide, giving you an editable PPTX file you can modify, reorder, and enhance in Microsoft PowerPoint, Google Slides, or LibreOffice Impress.' },
       { subtitle: 'Benefits of Converting PDF to PPT', text: 'Each PDF page becomes one slide in the resulting PPTX file, maintaining the original page order. Text content and basic structure are preserved for seamless editing. Sales teams, teachers, and trainers use this online PPT converter tool regularly. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF to PPT Converter', text: 'Upload your PDF and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF to PPT Converter', text: 'Simply upload your PDF, wait a few seconds for processing, and download the editable PowerPoint file instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents.' },
     ],
     faqs: [
@@ -130,9 +130,9 @@ const SEO_CONTENT = {
   'pdf-to-excel': {
     title: 'Convert PDF to Excel (XLS/XLSX) Online Free',
     sections: [
-      { subtitle: 'How to Convert PDF to Excel', text: 'Financial reports, data tables, invoices, and forms often arrive as PDFs. Converting PDF to Excel lets you analyze, sort, and calculate the data in Microsoft Excel, Google Sheets, or LibreOffice Calc. Stop retyping numbers and use our PDF to XLSX converter.' },
+      { subtitle: 'How to Convert PDF to Excel', text: 'Financial reports, data tables, invoices, and forms often arrive as PDFs. Converting PDF to Excel lets you analyze, sort, and calculate the data in Microsoft Excel, Google Sheets, or LibreOffice Calc. Use our free PDF to XLSX converter to extract data from PDF files.' },
       { subtitle: 'Benefits of Converting PDF to XLSX', text: 'Our converter extracts text content and basic table structure from your PDF and places it into an XLSX spreadsheet. Data analysts, accountants, and researchers use this online Excel converter tool to turn static PDF tables into working spreadsheets. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF to Excel Converter', text: 'Upload your PDF and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF to Excel Converter', text: 'Simply upload your PDF, wait a few seconds for processing, and download the editable Excel file instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents with third parties.' },
     ],
     faqs: [
@@ -144,9 +144,9 @@ const SEO_CONTENT = {
   'pdf-to-jpg': {
     title: 'Convert PDF to JPG Images Online Free',
     sections: [
-      { subtitle: 'How to Convert PDF to JPG', text: 'Need to use PDF pages as images in presentations, websites, or social media? Converting PDF to JPG turns each page into a high-quality image file. Teachers create worksheets, designers extract portfolio pages, and professionals make image previews from documents.' },
-      { subtitle: 'Benefits of Converting PDF to Image', text: 'Each page is rendered as a separate JPG image and packaged into a ZIP file for easy download. Choose from 72 DPI for web use, 150 DPI for presentations, or 300 DPI for high-resolution printing. Use this online image converter tool for all your PDF to JPG needs. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF to JPG Converter', text: 'Upload your PDF, select your preferred DPI, and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'How to Convert PDF to JPG', text: 'Need to use PDF pages as images in presentations, websites, or social media? Our PDF to JPG converter turns each page into a high-quality image file. Teachers create worksheets, designers extract portfolio pages, and professionals make image previews from documents.' },
+      { subtitle: 'Benefits of Converting PDF to Image', text: 'Each page is rendered as a separate JPG image and packaged into a ZIP file for easy download. Choose from 72 DPI for web use, 150 DPI for presentations, or 300 DPI for high-resolution printing. Use this free PDF to image online tool for all your conversion needs. Files up to 100 MB are supported.' },
+      { subtitle: 'Secure Online PDF to JPG Converter', text: 'Simply upload your PDF, select your preferred DPI, wait a few seconds for processing, and download the JPG images instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents.' },
     ],
     faqs: [
@@ -158,9 +158,9 @@ const SEO_CONTENT = {
   'html-to-pdf': {
     title: 'Convert HTML to PDF Online Free \u2014 Webpage to PDF',
     sections: [
-      { subtitle: 'How to Convert HTML to PDF', text: 'Save web articles, documentation pages, receipts, or invoices as PDF files for offline reading and archiving. Our HTML to PDF tool turns any webpage into a clean, printable PDF that preserves CSS styles and layout exactly as you see in your browser.' },
+      { subtitle: 'How to Convert HTML to PDF', text: 'Save web articles, documentation pages, receipts, or invoices as PDF files for offline reading and archiving. Our free HTML to PDF tool turns any webpage into a clean, printable PDF that preserves CSS styles and layout exactly as you see in your browser.' },
       { subtitle: 'Benefits of Converting Webpage to PDF', text: 'Puppeteer renders the webpage in a headless browser for accurate output. Enter a URL or upload an HTML file and the tool creates a pixel-perfect PDF. Essential for saving online content, generating invoices, and archiving web pages. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online HTML to PDF Converter', text: 'Paste a URL or upload an HTML file, then click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online HTML to PDF Converter', text: 'Simply paste a URL or upload an HTML file, wait a few seconds for processing, and download the PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. All uploads are encrypted during transfer.' },
     ],
     faqs: [
@@ -172,9 +172,9 @@ const SEO_CONTENT = {
   'word-to-pdf': {
     title: 'Convert Word to PDF Online Free \u2014 DOC/DOCX to PDF',
     sections: [
-      { subtitle: 'How to Convert Word to PDF', text: 'Sharing Word documents often leads to formatting issues, missing fonts, and layout shifts on different devices. Converting to PDF locks in your design so the recipient sees exactly what you intended. Use our DOCX to PDF converter for professional document sharing.' },
-      { subtitle: 'Benefits of Converting DOCX to PDF', text: 'Our Word to PDF converter uses LibreOffice to accurately process your DOC or DOCX file. Fonts, images, tables, and page layout are all preserved in the PDF output. This online Word to PDF tool handles resumes, proposals, contracts, and reports perfectly. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online Word to PDF Converter', text: 'Upload your DOC or DOCX file and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'How to Convert Word to PDF', text: 'Sharing Word documents often leads to formatting issues, missing fonts, and layout shifts on different devices. Converting to PDF locks in your design so the recipient sees exactly what you intended. Use our free DOC to PDF converter tool for professional document sharing.' },
+      { subtitle: 'Benefits of Converting DOCX to PDF', text: 'Our free Word to PDF converter uses LibreOffice to accurately process your DOC or DOCX file. Fonts, images, tables, and page layout are all preserved in the PDF output. This online Word document to PDF tool handles resumes, proposals, contracts, and reports perfectly. Files up to 100 MB are supported.' },
+      { subtitle: 'Secure Online Word to PDF Converter', text: 'Simply upload your Word file, wait a few seconds for processing, and download the converted PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents.' },
     ],
     faqs: [
@@ -188,7 +188,7 @@ const SEO_CONTENT = {
     sections: [
       { subtitle: 'How to Convert PowerPoint to PDF', text: 'PowerPoint files can look different on other devices due to missing fonts or version mismatches. Converting PPT to PDF locks in your formatting so slides appear identical everywhere. Use our online PPT to PDF tool for client distribution, handouts, and archiving.' },
       { subtitle: 'Benefits of Converting PPT to PDF', text: 'Each slide becomes a PDF page, preserving your text, images, charts, and shapes. LibreOffice processes the file on our servers for accurate rendering. Transition effects and animations are not included in the static PDF format. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PowerPoint to PDF Converter', text: 'Upload your PPT or PPTX file and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PowerPoint to PDF Converter', text: 'Simply upload your PPT or PPTX file, wait a few seconds for processing, and download the converted PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents.' },
     ],
     faqs: [
@@ -200,9 +200,9 @@ const SEO_CONTENT = {
   'excel-to-pdf': {
     title: 'Convert Excel to PDF Online Free \u2014 XLS/XLSX to PDF',
     sections: [
-      { subtitle: 'How to Convert Excel to PDF', text: 'Excel spreadsheets can lose formatting when opened in different versions or devices. Converting to PDF ensures your tables, charts, and data appear exactly as designed. Our XLS to PDF converter is the standard tool for sharing financial reports and invoices professionally.' },
+      { subtitle: 'How to Convert Excel to PDF', text: 'Excel spreadsheets can lose formatting when opened in different versions or devices. Converting to PDF ensures your tables, charts, and data appear exactly as designed. Our free XLS to PDF converter is the standard tool for sharing financial reports and invoices professionally.' },
       { subtitle: 'Benefits of Converting XLS to PDF', text: 'LibreOffice processes your spreadsheet on our servers. Cell data, numbers, text, basic charts, and table formatting are all preserved. Formulas are evaluated and computed values appear in the PDF. No spreadsheet software needed on the recipient side. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online Excel to PDF Converter', text: 'Upload your XLS or XLSX file and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online Excel to PDF Converter', text: 'Simply upload your XLS or XLSX file, wait a few seconds for processing, and download the converted PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never share your documents.' },
     ],
     faqs: [
@@ -214,9 +214,9 @@ const SEO_CONTENT = {
   'jpg-to-pdf': {
     title: 'Convert JPG Images to PDF Online Free \u2014 Image to PDF',
     sections: [
-      { subtitle: 'How to Convert JPG to PDF', text: 'Converting JPG, PNG, or WEBP images to PDF is the best way to combine multiple photos into a single portable document. Perfect for creating photo albums, digitizing printed documents, scanning paperwork with your phone, or making image portfolios for clients.' },
+      { subtitle: 'How to Convert JPG to PDF', text: 'Converting JPG, PNG, or WEBP images to PDF is the best way to combine multiple photos into a single portable document. Perfect for creating photo albums, digitizing printed documents, scanning paperwork with your phone, or making image portfolios for clients. Use our free image to PDF online tool.' },
       { subtitle: 'Benefits of Converting Images to PDF', text: 'Upload one or multiple images and arrange them in your preferred order. Each image is placed on a separate PDF page by default, ensuring nothing is cropped. This online image to PDF tool supports batch uploads for efficient document creation. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online Image to PDF Converter', text: 'Upload your images, arrange them in order, and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online Image to PDF Converter', text: 'Simply upload your images, arrange them in order, wait a few seconds for processing, and download the combined PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. All uploads are encrypted during transfer.' },
     ],
     faqs: [
@@ -228,9 +228,9 @@ const SEO_CONTENT = {
   'merge-image': {
     title: 'Merge Images into PDF Online Free \u2014 Combine Images to PDF',
     sections: [
-      { subtitle: 'How to Merge Images into PDF', text: 'Combining multiple images into one PDF makes sharing and printing easier. Create photo albums, combine scanned documents, or prepare image collections for email. Instead of sending multiple files, send one organized PDF document.' },
+      { subtitle: 'How to Merge Images into PDF', text: 'Combining multiple images into one PDF makes sharing and printing easier. Create photo albums, combine scanned documents, or prepare image collections for email. Instead of sending multiple files, send one organized PDF document using our free image merger.' },
       { subtitle: 'Benefits of Merging Images to PDF', text: 'Choose between single page layout where all images fit on one A4 page, or multi-page layout that distributes images across multiple pages for better visibility. Select High or Low quality output to balance file size and clarity. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online Image Merger Tool', text: 'Upload your images, choose your layout and quality preferences, and click Convert. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online Image Merger Tool', text: 'Simply upload your images, choose your layout and quality preferences, wait a few seconds for processing, and download the merged PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. All processing is done securely on our servers.' },
     ],
     faqs: [
@@ -242,9 +242,9 @@ const SEO_CONTENT = {
   'protect': {
     title: 'Protect PDF with Password Online Free',
     sections: [
-      { subtitle: 'How to Password Protect a PDF', text: 'Sensitive documents like contracts, financial statements, and medical records need protection from unauthorized access. Password-protecting your PDF ensures only intended recipients can open and view the content. It is essential for confidential document sharing via email or cloud storage.' },
+      { subtitle: 'How to Password Protect a PDF', text: 'Sensitive documents like contracts, financial statements, and medical records need protection from unauthorized access. Password-protecting your PDF ensures only intended recipients can open and view the content. Use our free PDF protection tool for confidential document sharing.' },
       { subtitle: 'Benefits of PDF Protection', text: 'The tool applies industry-standard encryption to your PDF. The password is case-sensitive and must be entered exactly to open the file. Our encryption is compatible with all major PDF readers including Adobe Acrobat and web browsers. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Protection Tool', text: 'Upload your PDF, enter a password, and click Protect. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Protection Tool', text: 'Simply upload your PDF, enter a password, wait a few seconds for processing, and download the protected PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never store or share your passwords.' },
     ],
     faqs: [
@@ -256,9 +256,9 @@ const SEO_CONTENT = {
   'unlock': {
     title: 'Unlock PDF Online Free \u2014 Remove Password from PDF',
     sections: [
-      { subtitle: 'How to Unlock a PDF File', text: 'Forgot the password on your own PDF? Or received a protected document and have the password? Unlocking removes the password restriction so the file opens freely on any device without authentication. No more typing passwords every time you open a document.' },
+      { subtitle: 'How to Unlock a PDF File', text: 'Forgot the password on your own PDF? Or received a protected document and have the password? Unlocking removes the password restriction so the file opens freely on any device without authentication. Use our free PDF unlock tool for easy access.' },
       { subtitle: 'Benefits of Removing PDF Password', text: 'You must provide the correct password to remove protection. Once unlocked, the resulting PDF can be opened by anyone without entering credentials. The process does not alter or compromise any content, formatting, or pages in your document. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online PDF Unlock Tool', text: 'Upload your protected PDF, enter the password, and click Unlock. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online PDF Unlock Tool', text: 'Simply upload your protected PDF, enter the password, wait a few seconds for processing, and download the unlocked PDF instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. We never store your passwords.' },
     ],
     faqs: [
@@ -270,9 +270,9 @@ const SEO_CONTENT = {
   'ocr': {
     title: 'OCR PDF Online Free \u2014 Extract Text from Scanned PDF',
     sections: [
-      { subtitle: 'How to Extract Text from Scanned PDF', text: 'Scanned documents contain images of text that cannot be searched or edited. OCR (Optical Character Recognition) extracts the text, turning paper documents into digital, searchable, editable files. Perfect for digitizing books, extracting quotes, and making records searchable.' },
+      { subtitle: 'How to Extract Text from Scanned PDF', text: 'Scanned documents contain images of text that cannot be searched or edited. OCR (Optical Character Recognition) extracts the text, turning paper documents into digital, searchable, editable files. Use our free online OCR tool for digitizing books and records.' },
       { subtitle: 'Benefits of Using OCR', text: 'Tesseract.js recognizes English text characters from scanned PDFs and images, converting them into machine-readable text. Each page is processed to identify characters and preserve their order. For best results, ensure your scans are clear and well-lit. Files up to 100 MB are supported.' },
-      { subtitle: 'Secure Online OCR PDF Tool', text: 'Upload your scanned PDF or image and click OCR. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
+      { subtitle: 'Secure Online OCR PDF Tool', text: 'Simply upload your scanned PDF or image, wait a few seconds for processing, and download the extracted text instantly. The tool works on Windows, macOS, Linux, Android, and iPhone devices. Files are encrypted during processing and automatically deleted after one hour.' },
       { subtitle: 'Security & Privacy', text: 'Files are encrypted during processing and automatically deleted after one hour. Your documents are never shared with third parties.' },
     ],
     faqs: [
