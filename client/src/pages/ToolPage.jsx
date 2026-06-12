@@ -346,6 +346,8 @@ const labelMap = {
   'merge-image': 'Merge Image', 'protect': 'Protect PDF', 'unlock': 'Unlock PDF', 'ocr': 'OCR PDF',
 };
 
+const h3style = { fontFamily: "var(--font-display)", fontSize: "1.05rem", fontWeight: 700, marginTop: 24, marginBottom: 8 };
+
 function ToolSeoContent({ slug, tool }) {
   const content = SEO_CONTENT[slug];
   if (!content || !tool) return null;
@@ -358,14 +360,25 @@ function ToolSeoContent({ slug, tool }) {
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
   };
+
+  const renderBody = () => {
+    return content.sections.map((s, i) => (
+      <div key={i}>
+        {s.subtitle && <h3 style={h3style}>{s.subtitle}</h3>}
+        {Array.isArray(s.text)
+          ? s.text.map((t, j) => <p key={j} style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 12, fontSize: "0.92rem" }}>{t}</p>)
+          : <p style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 12, fontSize: "0.92rem" }}>{s.text}</p>
+        }
+      </div>
+    ));
+  };
+
   return (
     <>
       <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       <section style={{ marginTop: 40, marginBottom: 40 }}>
         <h2 style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem", fontWeight: 800, marginBottom: 16 }}>{content.title}</h2>
-        {content.paragraphs.map((p, i) => (
-          <p key={i} style={{ color: "var(--text-muted)", lineHeight: 1.8, marginBottom: 12, fontSize: "0.92rem" }}>{p}</p>
-        ))}
+        {renderBody()}
         {content.faqs && content.faqs.length > 0 && (
           <div style={{ marginTop: 32 }}>
             <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.1rem", fontWeight: 700, marginBottom: 16 }}>Frequently Asked Questions</h3>
