@@ -6,11 +6,7 @@
   <url><loc>https://pdf-forge-k6sd.vercel.app/privacy</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/terms</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/contact</loc><priority>0.6</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/login</loc><priority>0.3</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/register</loc><priority>0.5</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/dashboard</loc><priority>0.3</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/profile</loc><priority>0.3</priority></url>
-  <url><loc>https://pdf-forge-k6sd.vercel.app/history</loc><priority>0.3</priority></url>
+  <url><loc>https://pdf-forge-k6sd.vercel.app/refund</loc><priority>0.5</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/merge</loc><priority>0.6</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/split</loc><priority>0.6</priority></url>
   <url><loc>https://pdf-forge-k6sd.vercel.app/tools/rotate</loc><priority>0.5</priority></url>
