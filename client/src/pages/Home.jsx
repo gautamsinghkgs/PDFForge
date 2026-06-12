@@ -204,9 +204,50 @@ export default function Home() {
           <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:16 }}>
             Need to convert a PDF to Word for editing? Use our PDF to Word converter. Want to combine multiple PDFs into one? The Merge PDF tool handles it in seconds. Compress large PDF files for email, unlock protected PDFs, add watermarks, extract text with OCR, and more — all from one place.
           </p>
-          <p style={{ color:'var(--text-muted)', lineHeight:1.8 }}>
-            PDFForge works on any device: desktop, tablet, or phone. Files are processed securely on our servers and automatically deleted within one hour. Create a free account to unlock higher usage limits, file history, and priority processing. Upgrade to Pro or Enterprise for unlimited access.
+
+          <h3 style={{ fontFamily:'var(--font-display)', fontSize:'1.15rem', fontWeight:700, marginTop:28, marginBottom:10 }}>Popular PDF Tools</h3>
+          <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:12 }}>
+            From organizing documents to converting formats, PDFForge covers every common PDF task:
           </p>
+          <ul style={{ color:'var(--text-muted)', lineHeight:2, paddingLeft:20, marginBottom:16 }}>
+            <li><Link to="/tools/merge" style={{ color:'var(--accent)' }}>Merge PDF</Link> — Combine multiple PDFs into one document</li>
+            <li><Link to="/tools/split" style={{ color:'var(--accent)' }}>Split PDF</Link> — Extract pages or split into separate files</li>
+            <li><Link to="/tools/compress" style={{ color:'var(--accent)' }}>Compress PDF</Link> — Reduce file size for easier sharing</li>
+            <li><Link to="/tools/pdf-to-word" style={{ color:'var(--accent)' }}>PDF to Word</Link> — Convert PDFs into editable DOCX files</li>
+            <li><Link to="/tools/word-to-pdf" style={{ color:'var(--accent)' }}>Word to PDF</Link> — Turn DOC/DOCX into professional PDFs</li>
+            <li><Link to="/tools/ocr" style={{ color:'var(--accent)' }}>OCR PDF</Link> — Extract text from scanned documents</li>
+            <li><Link to="/tools/protect" style={{ color:'var(--accent)' }}>Protect PDF</Link> — Password-protect sensitive files</li>
+          </ul>
+
+          <h3 style={{ fontFamily:'var(--font-display)', fontSize:'1.15rem', fontWeight:700, marginTop:28, marginBottom:10 }}>Why Choose PDFForge</h3>
+          <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:12 }}>
+            PDFForge stands out as a reliable free PDF converter and editor for several reasons:
+          </p>
+          <ul style={{ color:'var(--text-muted)', lineHeight:2, paddingLeft:20, marginBottom:16 }}>
+            <li><strong>Fast cloud processing</strong> — Files are handled on high-performance servers, delivering results in seconds</li>
+            <li><strong>No installation required</strong> — Everything runs in your browser. No downloads, no setup, no updates</li>
+            <li><strong>Secure file handling</strong> — All uploads are encrypted. Files are automatically deleted after one hour</li>
+            <li><strong>Works on all devices</strong> — Desktop, tablet, or phone — PDFForge works on Windows, macOS, Linux, Android, and iPhone</li>
+            <li><strong>Free PDF tools in one place</strong> — 20+ tools including compression, conversion, OCR, merging, splitting, and security features</li>
+            <li><strong>No watermarks or limits</strong> — Unlike other services, we do not add watermarks to your files</li>
+          </ul>
+
+          <h3 style={{ fontFamily:'var(--font-display)', fontSize:'1.15rem', fontWeight:700, marginTop:28, marginBottom:10 }}>Security & Privacy</h3>
+          <p style={{ color:'var(--text-muted)', lineHeight:1.8, marginBottom:16 }}>
+            Your files are encrypted during upload and automatically deleted after one hour. PDFForge never stores or shares your documents. Every download uses expiring signed links instead of public upload paths, ensuring only you can access your processed files. We take your privacy seriously — your documents belong to you, not us.
+          </p>
+
+          <h3 style={{ fontFamily:'var(--font-display)', fontSize:'1.15rem', fontWeight:700, marginTop:28, marginBottom:10 }}>Frequently Asked Questions</h3>
+          <div style={{ marginBottom:12 }}>
+            <h4 style={{ fontWeight:600, marginBottom:4, fontSize:'0.95rem' }}>Is PDFForge really free?</h4>
+            <p style={{ color:'var(--text-muted)', fontSize:'0.88rem', lineHeight:1.7, marginBottom:12 }}>Yes, all basic PDF tools are free to use with no registration required. Free users get 5 conversions per day. Create an account for higher limits and premium features.</p>
+            <h4 style={{ fontWeight:600, marginBottom:4, fontSize:'0.95rem' }}>Do I need to install anything?</h4>
+            <p style={{ color:'var(--text-muted)', fontSize:'0.88rem', lineHeight:1.7, marginBottom:12 }}>No, PDFForge works entirely in your browser. There is no software to download or install. Just upload your file and select a tool.</p>
+            <h4 style={{ fontWeight:600, marginBottom:4, fontSize:'0.95rem' }}>What file formats are supported?</h4>
+            <p style={{ color:'var(--text-muted)', fontSize:'0.88rem', lineHeight:1.7, marginBottom:12 }}>PDFForge supports PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, JPG, PNG, WEBP, and HTML files depending on the tool. Each tool page lists the supported formats.</p>
+            <h4 style={{ fontWeight:600, marginBottom:4, fontSize:'0.95rem' }}>How long are my files stored?</h4>
+            <p style={{ color:'var(--text-muted)', fontSize:'0.88rem', lineHeight:1.7, marginBottom:0 }}>Uploaded and processed files are automatically deleted from our servers within one hour. We do not retain or access your documents beyond the processing window.</p>
+          </div>
         </div>
       </section>
 
