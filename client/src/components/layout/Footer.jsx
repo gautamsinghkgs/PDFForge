@@ -52,6 +52,7 @@ export default function Footer() {
           <div className={styles.bottomLinks}>
             <Link to="/privacy" className={styles.link}>Privacy Policy</Link>
             <Link to="/terms" className={styles.link}>Terms of Service</Link>
+            <Link to="/refund" className={styles.link}>Refund Policy</Link>
           </div>
         </div>
       </div>

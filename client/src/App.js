@@ -15,6 +15,7 @@ import About       from './pages/About';
 import Privacy     from './pages/Privacy';
 import Tos         from './pages/Tos';
 import Contact     from './pages/Contact';
+import Refund      from './pages/Refund';
 import ToolPage    from './pages/ToolPage';
 import NotFound    from './pages/NotFound';
 
@@ -43,6 +44,7 @@ export default function App() {
         <Route path="/privacy"   element={<Privacy />} />
         <Route path="/terms"     element={<Tos />} />
         <Route path="/contact"   element={<Contact />} />
+        <Route path="/refund"    element={<Refund />} />
         <Route path="/tools/:slug" element={<ToolPage />} />
         <Route path="/login"    element={<GuestRoute><Login /></GuestRoute>} />
         <Route path="/register" element={<GuestRoute><Register /></GuestRoute>} />
