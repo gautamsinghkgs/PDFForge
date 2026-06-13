@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { GoogleLogin } from '@react-oauth/google';
@@ -14,6 +14,11 @@ export default function Login() {
   const [googleLoading, setGoogleLoading] = useState(false);
 
   const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }));
+
+  // Wake up Render cold start on page load
+  useEffect(() => {
+    fetch('https://pdfforge-server-8mwu.onrender.com/healthz').catch(() => {});
+  }, []);
 
   const handleSubmit = async e => {
     e.preventDefault();
