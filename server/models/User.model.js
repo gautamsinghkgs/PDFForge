@@ -86,11 +86,11 @@ userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };
 
-// ── Reset daily task counter ──
+// ── Reset task counter after 24 hours ──
 userSchema.methods.checkDailyReset = function () {
-  const today = new Date().toDateString();
-  const lastDate = this.lastTaskDate ? new Date(this.lastTaskDate).toDateString() : null;
-  if (today !== lastDate) {
+  if (!this.lastTaskDate) return;
+  const hoursSince = (Date.now() - new Date(this.lastTaskDate).getTime()) / 36e5;
+  if (hoursSince >= 24) {
     this.tasksToday = 0;
     this.lastTaskDate = new Date();
   }

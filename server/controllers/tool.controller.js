@@ -1325,6 +1325,11 @@ exports.processTool = async (req, res) => {
       if (!record) {
         record = await GuestUsage.create({ guestId, count: 0 });
       }
+      // Reset guest counter after 24 hours
+      if (record.updatedAt && (Date.now() - new Date(record.updatedAt).getTime()) / 36e5 >= 24) {
+        record.count = 0;
+        await record.save();
+      }
       if (record.count >= 5) {
         cleanupInputFiles(files);
         return res.status(403).json({ success: false, message: 'GUEST_LIMIT_REACHED' });
