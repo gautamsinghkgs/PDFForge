@@ -33,6 +33,15 @@ export const AuthProvider = ({ children }) => {
     return data;
   }, []);
 
+  const googleLogin = useCallback(async (credential) => {
+    const { data } = await api.post('/auth/google', { credential });
+    sessionStorage.setItem('pdfforge_token', data.token);
+    sessionStorage.setItem('pdfforge_user', JSON.stringify(data.user));
+    setUser(data.user);
+    clearGuestUsage();
+    return data;
+  }, []);
+
   const register = useCallback(async (name, email, password) => {
     const { data } = await api.post('/auth/register', { name, email, password });
     sessionStorage.setItem('pdfforge_token', data.token);
@@ -54,7 +63,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout, updateUser }}>
+    <AuthContext.Provider value={{ user, loading, login, register, googleLogin, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

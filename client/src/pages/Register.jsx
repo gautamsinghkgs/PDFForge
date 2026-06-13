@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { GoogleLogin } from '@react-oauth/google';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import styles from './Auth.module.css';
 
 export default function Register() {
-  const { register } = useAuth();
+  const { register, googleLogin } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', password: '', confirm: '' });
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
 
   const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }));
 
@@ -31,6 +33,19 @@ export default function Register() {
     }
   };
 
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      setGoogleLoading(true);
+      await googleLogin(credentialResponse.credential);
+      toast.success('Signed in with Google!');
+      navigate('/dashboard');
+    } catch (err) {
+      toast.error('Google sign-in failed');
+    } finally {
+      setGoogleLoading(false);
+    }
+  };
+
   return (
     <div className={styles.page}>
       <motion.div
@@ -44,6 +59,27 @@ export default function Register() {
         </Link>
         <h2>Create your account</h2>
         <p className={styles.sub}>Free forever. No credit card required.</p>
+
+        <div style={{ marginBottom: 20, display: 'flex', justifyContent: 'center' }}>
+          {googleLoading ? (
+            <div className="spinner" />
+          ) : (
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={() => toast.error('Google sign-in failed')}
+              theme="filled_black"
+              size="large"
+              shape="pill"
+              text="signup_with"
+            />
+          )}
+        </div>
+
+        <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:20 }}>
+          <span style={{ flex:1, height:1, background:'var(--border)' }}/>
+          <span style={{ color:'var(--text-muted)', fontSize:'0.8rem' }}>OR</span>
+          <span style={{ flex:1, height:1, background:'var(--border)' }}/>
+        </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.group}>
@@ -74,7 +110,7 @@ export default function Register() {
               value={form.confirm} onChange={handleChange}
             />
           </div>
-          <button type="submit" className={styles.submitBtn} disabled={loading}>
+          <button type="submit" className={styles.submitBtn} disabled={loading || googleLoading}>
             {loading ? <><div className="spinner"/> Creating account…</> : 'Create Free Account'}
           </button>
         </form>

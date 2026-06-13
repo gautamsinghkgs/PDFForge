@@ -1,6 +1,9 @@
 const jwt = require('jsonwebtoken');
+const { OAuth2Client } = require('google-auth-library');
 const { validationResult } = require('express-validator');
 const User = require('../models/User.model');
+
+const googleClient = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // ── Generate JWT ──
 const generateToken = (id) =>
@@ -83,6 +86,46 @@ exports.login = async (req, res) => {
     });
   } catch (err) {
     res.status(500).json({ success: false, message: 'Login failed' });
+  }
+};
+
+// ── @route  POST /api/auth/google ──
+exports.googleLogin = async (req, res) => {
+  const { credential } = req.body;
+  if (!credential) return res.status(400).json({ success: false, message: 'Google credential required' });
+
+  try {
+    const ticket = await googleClient.verifyIdToken({
+      idToken: credential,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+    const { sub: googleId, email, name, picture } = ticket.getPayload();
+
+    let user = await User.findOne({ email });
+    if (!user) {
+      user = await User.create({ name, email, avatar: picture || '', isVerified: true });
+    } else if (!user.avatar && picture) {
+      user.avatar = picture;
+      await user.save();
+    }
+
+    const token = generateToken(user._id);
+
+    res.json({
+      success: true,
+      message: 'Google sign-in successful',
+      token,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        plan: user.plan,
+        avatar: user.avatar,
+        createdAt: user.createdAt,
+      },
+    });
+  } catch (err) {
+    res.status(401).json({ success: false, message: 'Google authentication failed' });
   }
 };
 

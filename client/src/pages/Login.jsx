@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { GoogleLogin } from '@react-oauth/google';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import styles from './Auth.module.css';
 
 export default function Login() {
-  const { login } = useAuth();
+  const { login, googleLogin } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
   const [loading, setLoading] = useState(false);
+  const [googleLoading, setGoogleLoading] = useState(false);
 
   const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }));
 
@@ -28,6 +30,19 @@ export default function Login() {
     }
   };
 
+  const handleGoogleSuccess = async (credentialResponse) => {
+    try {
+      setGoogleLoading(true);
+      await googleLogin(credentialResponse.credential);
+      toast.success('Signed in with Google!');
+      navigate('/dashboard');
+    } catch (err) {
+      toast.error('Google sign-in failed');
+    } finally {
+      setGoogleLoading(false);
+    }
+  };
+
   return (
     <div className={styles.page}>
       <motion.div
@@ -41,6 +56,27 @@ export default function Login() {
         </Link>
         <h2>Welcome back</h2>
         <p className={styles.sub}>Sign in to access your tools and files.</p>
+
+        <div style={{ marginBottom: 20, display: 'flex', justifyContent: 'center' }}>
+          {googleLoading ? (
+            <div className="spinner" />
+          ) : (
+            <GoogleLogin
+              onSuccess={handleGoogleSuccess}
+              onError={() => toast.error('Google sign-in failed')}
+              theme="filled_black"
+              size="large"
+              shape="pill"
+              text="signin_with"
+            />
+          )}
+        </div>
+
+        <div style={{ display:'flex', alignItems:'center', gap:12, marginBottom:20 }}>
+          <span style={{ flex:1, height:1, background:'var(--border)' }}/>
+          <span style={{ color:'var(--text-muted)', fontSize:'0.8rem' }}>OR</span>
+          <span style={{ flex:1, height:1, background:'var(--border)' }}/>
+        </div>
 
         <form onSubmit={handleSubmit} className={styles.form}>
           <div className={styles.group}>
@@ -57,7 +93,7 @@ export default function Login() {
               value={form.password} onChange={handleChange} autoComplete="current-password"
             />
           </div>
-          <button type="submit" className={styles.submitBtn} disabled={loading}>
+          <button type="submit" className={styles.submitBtn} disabled={loading || googleLoading}>
             {loading ? <><div className="spinner"/> Signing in…</> : 'Sign In'}
           </button>
         </form>

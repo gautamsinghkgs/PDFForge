@@ -20,12 +20,7 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      required: [true, 'Password is required'],
       minlength: [8, 'Password must be at least 8 characters'],
-      validate: {
-        validator: v => /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(v),
-        message: 'Password must contain uppercase, lowercase, and a number',
-      },
       select: false,
     },
     plan: {
@@ -80,7 +75,7 @@ const userSchema = new mongoose.Schema(
 
 // ── Hash password before saving ──
 userSchema.pre('save', async function (next) {
-  if (!this.isModified('password')) return next();
+  if (!this.isModified('password') || !this.password) return next();
   const salt = await bcrypt.genSalt(10);
   this.password = await bcrypt.hash(this.password, salt);
   next();
