@@ -20,11 +20,22 @@ export default function Login() {
     fetch('https://pdfforge-server-8mwu.onrender.com/healthz').catch(() => {});
   }, []);
 
+  const warmServer = async () => {
+    for (let i = 0; i < 8; i++) {
+      try {
+        const res = await fetch('https://pdfforge-server-8mwu.onrender.com/healthz');
+        if (res.ok) return;
+      } catch {}
+      await new Promise(r => setTimeout(r, 4000));
+    }
+  };
+
   const handleSubmit = async e => {
     e.preventDefault();
     if (!form.email || !form.password) { toast.error('Please fill all fields'); return; }
     setLoading(true);
     try {
+      await warmServer();
       await login(form.email, form.password);
       toast.success('Welcome back!');
       navigate('/dashboard');
@@ -99,7 +110,7 @@ export default function Login() {
             />
           </div>
           <button type="submit" className={styles.submitBtn} disabled={loading || googleLoading}>
-            {loading ? <><div className="spinner"/> Signing in…</> : 'Sign In'}
+            {loading ? <><div className="spinner"/> Waking up server…</> : 'Sign In'}
           </button>
         </form>
 

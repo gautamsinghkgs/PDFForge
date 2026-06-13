@@ -20,6 +20,16 @@ export default function Register() {
     fetch('https://pdfforge-server-8mwu.onrender.com/healthz').catch(() => {});
   }, []);
 
+  const warmServer = async () => {
+    for (let i = 0; i < 8; i++) {
+      try {
+        const res = await fetch('https://pdfforge-server-8mwu.onrender.com/healthz');
+        if (res.ok) return;
+      } catch {}
+      await new Promise(r => setTimeout(r, 4000));
+    }
+  };
+
   const handleSubmit = async e => {
     e.preventDefault();
     if (!form.name || !form.email || !form.password) { toast.error('Please fill all fields'); return; }
@@ -28,6 +38,7 @@ export default function Register() {
     if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(form.password)) { toast.error('Password must contain uppercase, lowercase, and a number'); return; }
     setLoading(true);
     try {
+      await warmServer();
       await register(form.name, form.email, form.password);
       toast.success('Account created! Welcome to PDFForge 🎉');
       navigate('/dashboard');
@@ -116,7 +127,7 @@ export default function Register() {
             />
           </div>
           <button type="submit" className={styles.submitBtn} disabled={loading || googleLoading}>
-            {loading ? <><div className="spinner"/> Creating account…</> : 'Create Free Account'}
+            {loading ? <><div className="spinner"/> Waking up server…</> : 'Create Free Account'}
           </button>
         </form>
 
