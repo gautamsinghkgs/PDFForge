@@ -1308,7 +1308,14 @@ exports.processTool = async (req, res) => {
         });
       }
 
-      if (!user.canRunTask()) {
+      // Reset task count if 24+ hours since last task
+      if (!user.lastTaskDate || (Date.now() - new Date(user.lastTaskDate).getTime()) / 36e5 >= 24) {
+        user.tasksToday = 0;
+      }
+
+      const limits = { free: 10, pro: 100, enterprise: Infinity };
+      const maxTasks = limits[user.plan] || 10;
+      if (user.tasksToday >= maxTasks) {
         cleanupInputFiles(files);
         return res.status(429).json({ success: false, message: 'Daily task limit reached. Upgrade your plan.' });
       }
