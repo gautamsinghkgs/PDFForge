@@ -45,6 +45,7 @@ export default function Login() {
   };
 
   return (
+    <>
     <SeoHelmet title="Sign In - PDFForge" description="Sign in to your PDFForge account to access premium PDF tools and higher usage limits." canonical="/login" />
     <div className={styles.page}>
       <motion.div
@@ -105,5 +106,6 @@ export default function Login() {
         </p>
       </motion.div>
     </div>
+    </>
   );
 }

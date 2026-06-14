@@ -3,6 +3,7 @@ import SeoHelmet from '../components/SeoHelmet';
 
 export default function NotFound() {
   return (
+    <>
     <SeoHelmet title="Page Not Found - PDFForge" description="The page you are looking for does not exist." />
     <div style={{
       textAlign: 'center', padding: '120px 24px',
@@ -22,5 +23,6 @@ export default function NotFound() {
         ← Back to Home
       </Link>
     </div>
+    </>
   );
 }

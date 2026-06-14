@@ -145,6 +145,7 @@ export default function Pricing() {
   };
 
   return (
+    <>
     <SeoHelmet title="Pricing - PDFForge Pro &amp; Enterprise Plans" description="Choose the right PDFForge plan. Free, Pro (₹49), and Enterprise (₹199) plans with different task limits and features." canonical="/pricing" />
     <div className="page-enter">
       <div className={styles.header}>
@@ -242,5 +243,6 @@ export default function Pricing() {
         </div>
       </div>
     </div>
+    </>
   );
 }

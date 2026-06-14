@@ -4,6 +4,7 @@ import SeoHelmet from '../components/SeoHelmet';
 
 export default function Contact() {
   return (
+    <>
     <SeoHelmet title="Contact Us - PDFForge" description="Get in touch with PDFForge support. Email us at gautam16ksingh@gmail.com for questions or feedback." canonical="/contact" />
     <div className="page-enter">
       <div className={styles.hero}>
@@ -44,5 +45,6 @@ export default function Contact() {
         <Link to="/" className="btn-primary" style={{ padding:'14px 32px', fontSize:'1rem' }}>Browse Tools</Link>
       </div>
     </div>
+    </>
   );
 }

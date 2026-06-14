@@ -4,6 +4,7 @@ import SeoHelmet from '../components/SeoHelmet';
 
 export default function Privacy() {
   return (
+    <>
     <SeoHelmet title="Privacy Policy - PDFForge" description="PDFForge Privacy Policy. Learn how we collect, use, and protect your personal data and uploaded documents." canonical="/privacy" />
     <div className="page-enter">
       <div className={styles.hero}>
@@ -91,5 +92,6 @@ export default function Privacy() {
         <Link to="/register" className="btn-primary" style={{ padding: '14px 32px', fontSize: '1rem' }}>Create Free Account</Link>
       </div>
     </div>
+    </>
   );
 }

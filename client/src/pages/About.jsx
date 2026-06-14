@@ -4,6 +4,7 @@ import SeoHelmet from '../components/SeoHelmet';
 
 export default function About() {
   return (
+    <>
     <SeoHelmet title="About PDFForge - Free Online PDF Tools" description="Learn about PDFForge, a free online PDF toolkit built by Gautam Kumar Singh. 20+ PDF tools in your browser." canonical="/about" />
     <div className="page-enter">
       <div className={styles.hero}>
@@ -58,5 +59,6 @@ export default function About() {
         <Link to="/register" className="btn-primary" style={{ padding:'14px 32px', fontSize:'1rem' }}>Create Free Account</Link>
       </div>
     </div>
+    </>
   );
 }

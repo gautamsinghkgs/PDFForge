@@ -4,6 +4,7 @@ import SeoHelmet from '../components/SeoHelmet';
 
 export default function Tos() {
   return (
+    <>
     <SeoHelmet title="Terms of Service - PDFForge" description="PDFForge Terms of Service. Read the rules and guidelines for using our free online PDF tools." canonical="/terms" />
     <div className="page-enter">
       <div className={styles.hero}>
@@ -69,5 +70,6 @@ export default function Tos() {
         <Link to="/register" className="btn-primary" style={{ padding: '14px 32px', fontSize: '1rem' }}>Create Free Account</Link>
       </div>
     </div>
+    </>
   );
 }

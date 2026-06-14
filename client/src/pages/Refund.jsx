@@ -4,6 +4,7 @@ import SeoHelmet from '../components/SeoHelmet';
 
 export default function Refund() {
   return (
+    <>
     <SeoHelmet title="Refund Policy - PDFForge" description="PDFForge Refund Policy for paid plans (Pro ₹49 and Enterprise ₹199). Terms and conditions for refunds." canonical="/refund" />
     <div className="page-enter">
       <div className={styles.hero}>
@@ -67,5 +68,6 @@ export default function Refund() {
         <Link to="/contact" className="btn-primary" style={{ padding: '14px 32px', fontSize: '1rem' }}>Contact Us</Link>
       </div>
     </div>
+    </>
   );
 }
