@@ -110,7 +110,13 @@ app.use('/api/payments', paymentRoutes);
 
 // ── Health check (Render uses /healthz, Vercel/Railway may use others) ──
 app.get(['/healthz', '/api/health', '/health'], (req, res) => {
-  res.json({ status: 'OK', time: new Date().toISOString() });
+  res.json({
+    success: true,
+    status: 'OK',
+    uptime: Math.floor(process.uptime()),
+    timestamp: new Date().toISOString(),
+    message: 'PDFForge server healthy',
+  });
 });
 
 // ── 404 handler ──
