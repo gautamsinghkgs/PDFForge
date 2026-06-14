@@ -83,7 +83,7 @@ export default function Login() {
             <label>Email</label>
             <input
               type="email" name="email" placeholder="you@example.com"
-              value={form.email} onChange={handleChange} autoComplete="email"
+              value={form.email} onChange={handleChange} onFocus={() => fetch('https://pdfforge-server-8mwu.onrender.com/healthz').catch(() => {})} autoComplete="email"
             />
           </div>
           <div className={styles.group}>
