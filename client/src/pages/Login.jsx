@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { GoogleLogin } from '@react-oauth/google';
@@ -13,15 +13,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
 
-  const pingHealth = () => fetch('https://pdfforge-server-8mwu.onrender.com/healthz').catch(() => {});
-
-  // Wake up Render cold start
-  useEffect(() => { pingHealth(); }, []);
-
-  const handleChange = e => {
-    pingHealth();
-    setForm(p => ({ ...p, [e.target.name]: e.target.value }));
-  };
+  const handleChange = e => setForm(p => ({ ...p, [e.target.name]: e.target.value }));
 
   const handleSubmit = async e => {
     e.preventDefault();

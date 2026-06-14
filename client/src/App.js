@@ -4,6 +4,7 @@ import { useAuth } from './context/AuthContext';
 import Navbar      from './components/layout/Navbar';
 import Footer      from './components/layout/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import KeepAlive   from './components/KeepAlive';
 
 import Home        from './pages/Home';
 import Login       from './pages/Login';
@@ -38,6 +39,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <KeepAlive />
       <Navbar />
       <Routes>
         <Route path="/"          element={<Home />} />
