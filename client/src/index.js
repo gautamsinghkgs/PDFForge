@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { HelmetProvider } from 'react-helmet-async';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import App from './App';
 import { AuthProvider } from './context/AuthContext';
@@ -11,9 +12,10 @@ const googleClientId = process.env.REACT_APP_GOOGLE_CLIENT_ID || '';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GoogleOAuthProvider clientId={googleClientId}>
-      <AuthProvider>
-        <App />
+    <HelmetProvider>
+      <GoogleOAuthProvider clientId={googleClientId}>
+        <AuthProvider>
+          <App />
         <Toaster
         position="top-right"
         toastOptions={{
@@ -28,7 +30,8 @@ root.render(
           error:   { iconTheme: { primary: '#ef4444', secondary: '#fff' } },
         }}
       />
-      </AuthProvider>
-    </GoogleOAuthProvider>
+        </AuthProvider>
+      </GoogleOAuthProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );

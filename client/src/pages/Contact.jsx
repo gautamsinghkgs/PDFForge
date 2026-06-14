@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function Contact() {
   return (
+    <SeoHelmet title="Contact Us - PDFForge" description="Get in touch with PDFForge support. Email us at gautam16ksingh@gmail.com for questions or feedback." canonical="/contact" />
     <div className="page-enter">
       <div className={styles.hero}>
         <span className={styles.tag}>Contact Us</span>

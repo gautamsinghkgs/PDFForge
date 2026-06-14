@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import api from '../utils/api';
 import styles from './Pricing.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 const PLANS = [
   {
@@ -144,6 +145,7 @@ export default function Pricing() {
   };
 
   return (
+    <SeoHelmet title="Pricing - PDFForge Pro &amp; Enterprise Plans" description="Choose the right PDFForge plan. Free, Pro (₹49), and Enterprise (₹199) plans with different task limits and features." canonical="/pricing" />
     <div className="page-enter">
       <div className={styles.header}>
         <span className={styles.tag}>Pricing</span>

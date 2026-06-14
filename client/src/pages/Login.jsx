@@ -5,6 +5,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import styles from './Auth.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function Login() {
   const { login, googleLogin } = useAuth();
@@ -44,6 +45,7 @@ export default function Login() {
   };
 
   return (
+    <SeoHelmet title="Sign In - PDFForge" description="Sign in to your PDFForge account to access premium PDF tools and higher usage limits." canonical="/login" />
     <div className={styles.page}>
       <motion.div
         className={styles.card}

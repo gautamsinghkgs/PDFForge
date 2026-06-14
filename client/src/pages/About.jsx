@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function About() {
   return (
+    <SeoHelmet title="About PDFForge - Free Online PDF Tools" description="Learn about PDFForge, a free online PDF toolkit built by Gautam Kumar Singh. 20+ PDF tools in your browser." canonical="/about" />
     <div className="page-enter">
       <div className={styles.hero}>
         <span className={styles.tag}>About PDFForge</span>

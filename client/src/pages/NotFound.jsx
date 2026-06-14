@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function NotFound() {
   return (
+    <SeoHelmet title="Page Not Found - PDFForge" description="The page you are looking for does not exist." />
     <div style={{
       textAlign: 'center', padding: '120px 24px',
       minHeight: '60vh', display: 'flex', flexDirection: 'column',

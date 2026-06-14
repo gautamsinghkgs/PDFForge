@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function Tos() {
   return (
+    <SeoHelmet title="Terms of Service - PDFForge" description="PDFForge Terms of Service. Read the rules and guidelines for using our free online PDF tools." canonical="/terms" />
     <div className="page-enter">
       <div className={styles.hero}>
         <span className={styles.tag}>Terms of Service</span>

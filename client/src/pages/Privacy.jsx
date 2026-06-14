@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function Privacy() {
   return (
+    <SeoHelmet title="Privacy Policy - PDFForge" description="PDFForge Privacy Policy. Learn how we collect, use, and protect your personal data and uploaded documents." canonical="/privacy" />
     <div className="page-enter">
       <div className={styles.hero}>
         <span className={styles.tag}>Privacy Policy</span>

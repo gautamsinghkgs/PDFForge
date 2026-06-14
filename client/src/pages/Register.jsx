@@ -5,6 +5,7 @@ import { GoogleLogin } from '@react-oauth/google';
 import toast from 'react-hot-toast';
 import { useAuth } from '../context/AuthContext';
 import styles from './Auth.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function Register() {
   const { register, googleLogin } = useAuth();
@@ -47,6 +48,7 @@ export default function Register() {
   };
 
   return (
+    <SeoHelmet title="Create Account - PDFForge" description="Create a free PDFForge account. No credit card required. Get 10 daily tasks on the free plan." canonical="/register" />
     <div className={styles.page}>
       <motion.div
         className={styles.card}

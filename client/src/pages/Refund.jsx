@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './About.module.css';
+import SeoHelmet from '../components/SeoHelmet';
 
 export default function Refund() {
   return (
+    <SeoHelmet title="Refund Policy - PDFForge" description="PDFForge Refund Policy for paid plans (Pro ₹49 and Enterprise ₹199). Terms and conditions for refunds." canonical="/refund" />
     <div className="page-enter">
       <div className={styles.hero}>
         <span className={styles.tag}>Refund Policy</span>

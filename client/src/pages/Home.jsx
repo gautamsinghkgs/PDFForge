@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiSearch, FiX } from 'react-icons/fi';
 import { getToolIcon } from '../utils/toolIcons';
 import ALL_TOOLS from '../utils/toolData';
+import SeoHelmet from '../components/SeoHelmet';
 import styles from './Home.module.css';
 
 const CATS = [
@@ -46,6 +47,8 @@ export default function Home() {
 
   return (
     <div>
+      <SeoHelmet />
+
       {/* ── HERO ── */}
       <section className={styles.hero}>
         <div className="container">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiDownload, FiCheckCircle, FiAlertCircle, FiFile, FiInfo } from 'react-icons/fi';
@@ -11,6 +11,8 @@ import { parseByteSize, formatFileSize } from '../utils/byteSize';
 import { getToolIcon } from '../utils/toolIcons';
 import { useAuth } from '../context/AuthContext';
 import { getGuestId, GUEST_LIMIT } from '../utils/guestLimit';
+import SeoHelmet from '../components/SeoHelmet';
+import ALL_TOOLS from '../utils/toolData';
 import styles from './ToolPage.module.css';
 
 const CAT_COLORS = {
@@ -31,6 +33,10 @@ export default function ToolPage() {
   const [downloadBusy, setDownloadBusy] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [guestRemaining, setGuestRemaining] = useState(5);
+
+  const toolInfo = useMemo(() => ALL_TOOLS.find(t => t.slug === slug), [slug]);
+  const seoTitle = toolInfo ? `${toolInfo.label} - ${toolInfo.description} | PDFForge` : '';
+  const seoDesc = toolInfo ? `Free online ${toolInfo.label.toLowerCase()} tool. ${toolInfo.description} No signup required.` : '';
 
   useEffect(() => {
     setFiles([]); setResult(null); setError('');
@@ -174,6 +180,8 @@ export default function ToolPage() {
 
   return (
     <>
+      <SeoHelmet title={seoTitle} description={seoDesc} canonical={`/tools/${slug}`} />
+
       {/* Breadcrumb */}
       <div className={styles.breadcrumb}>
         <div className="container">
